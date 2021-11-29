@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_29_165325) do
+ActiveRecord::Schema.define(version: 2021_11_29_170724) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,24 @@ ActiveRecord::Schema.define(version: 2021_11_29_165325) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_collections_on_user_id"
+  end
+
+  create_table "restaurant_collections", force: :cascade do |t|
+    t.bigint "restaurant_id", null: false
+    t.bigint "collection_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["collection_id"], name: "index_restaurant_collections_on_collection_id"
+    t.index ["restaurant_id"], name: "index_restaurant_collections_on_restaurant_id"
+  end
+
+  create_table "restaurant_vibes", force: :cascade do |t|
+    t.bigint "vibe_id", null: false
+    t.bigint "restaurant_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["restaurant_id"], name: "index_restaurant_vibes_on_restaurant_id"
+    t.index ["vibe_id"], name: "index_restaurant_vibes_on_vibe_id"
   end
 
   create_table "restaurants", force: :cascade do |t|
@@ -38,6 +56,15 @@ ActiveRecord::Schema.define(version: 2021_11_29_165325) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "restaurant_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["restaurant_id"], name: "index_reviews_on_restaurant_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -52,5 +79,17 @@ ActiveRecord::Schema.define(version: 2021_11_29_165325) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "vibes", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   add_foreign_key "collections", "users"
+  add_foreign_key "restaurant_collections", "collections"
+  add_foreign_key "restaurant_collections", "restaurants"
+  add_foreign_key "restaurant_vibes", "restaurants"
+  add_foreign_key "restaurant_vibes", "vibes"
+  add_foreign_key "reviews", "restaurants"
+  add_foreign_key "reviews", "users"
 end
