@@ -1,0 +1,2 @@
+class Vibe < ApplicationRecord
+end
