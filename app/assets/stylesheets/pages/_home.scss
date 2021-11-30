@@ -11,14 +11,6 @@
   height: 100%;
 }
 
-.banner h1 {
-  margin: 0;
-  color: $white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
-  font-weight: bold;
-}
-
 .banner p {
   font-size: 20px;
   color: $white;
@@ -26,25 +18,32 @@
   text-shadow: 1px 1px 1px rgba($color: $gray, $alpha: 0.3);
 }
 
-.container {
+.container-banner {
   margin-left: 20px;
+  margin-right: 20px;
   height: 100%;
 }
 
 
-.container-title {
-  margin-bottom: 250px;
+.container-header {
+  width: 100%;
+  margin-bottom: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   h1 {
-    font-size: 2.5em;
-    padding-top: 30px;
+    font-size: 55px;
+    color: $white;
+    font-weight: 700;
+    letter-spacing: 1px;
     text-shadow: 1px 1px 1px rgba($color: $gray, $alpha: 0.3);
   }
 }
 .container-info {
   margin-left: 30px;
-  h2 {
-    font-size: 2.6em;
-    font-weight: 600;
+  max-width: 950px;
+  h1 {
+    font-size: 68px;
     letter-spacing: 0.5px;
     color: $white;
     text-shadow: 1px 1px 1px rgba($color: $gray, $alpha: 0.3);
@@ -53,8 +52,101 @@
     margin-top: 30px;
     text-shadow: 1px 1px 1px rgba($color: $gray, $alpha: 0.3);
     box-shadow: 2px 2px 1px rgba($color: $gray, $alpha: 0.6);
+    transition: all .4s ease-out;
+  }
+  .btn:hover {
+    box-shadow: 2px 2px 2px rgba($color: $gray, $alpha: 0.6);
+    transform: translate(0, -3px);
   }
 }
 .notice {
   margin: 0;
+}
+
+.highlight {
+  background: url(assets/highlight.png);
+  background-repeat: no-repeat;
+  background-size: 100% 80%;
+  background-position: 0 50%;
+  padding: 8px 0;
+  z-index: 1;
+}
+
+@media (min-width: 740px) {
+  .container-home {
+    width: 100%;
+  }
+  .container-header button {
+    width: 150px!important;
+  }
+  .container-login .btn {
+    box-shadow: 1px 1px 1px rgba($color: #000000, $alpha: 0.3);
+  }
+}
+
+@media (max-width: 740px) {
+  /* For a screen < 720px, this CSS will be read */
+  .container-home {
+    width: 100%;
+  }
+
+  .container-title h1 {
+    font-size: 55px;
+  }
+
+  .container-info {
+    margin-left: 20px;
+    h1 {
+      font-size: 55px;
+    }
+  }
+
+  .container-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  button {
+    width: 100px!important;
+    margin-left: 100px;
+    margin-top: 10px;
+    height: 40px;
+  }
+}
+
+.container-login {
+  display: grid;
+  justify-content: space-between;
+}
+  .container-login .btn {
+    box-shadow: 1px 1px 1px rgba($color: #000000, $alpha: 0.3);
+  }
+}
+
+@media (max-width: 540px) {
+  /* For a screen < 540px, this CSS will be read */
+  .container-home {
+    width: 100%;
+  }
+
+  .container-title h1 {
+    font-size: 45px;
+  }
+
+  .container-info {
+    margin-left: 10px;
+    h1 {
+      font-size: 45px;
+    }
+  }
+
+  .container-header button {
+    width: 100px!important;
+    margin-left: 100px;
+    margin-top: 10px;
+    height: 40px;
+  }
+  .container-login .btn {
+    box-shadow: 1px 1px 1px rgba($color: #000000, $alpha: 0.3);
+  }
 }
