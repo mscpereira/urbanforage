@@ -1,0 +1,15 @@
+<div class="container-vibes">
+  <div class="container">
+    <div class="row">
+      <% @vibes.each do |vibe| %>
+      <div class="col-lg-4 col-md-4 col-sm-12">
+        <div class="card cards-vibe justify-content-center align-items-center">
+          <div class="p2"><p><%= vibe.name %></p></div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="footer"></div>
+</div>
