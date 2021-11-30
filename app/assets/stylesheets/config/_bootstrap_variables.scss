@@ -6,12 +6,13 @@
 // General style
 $font-family-sans-serif:  $body-font;
 $headings-font-family:    $headers-font;
-$body-bg:                 $light-gray;
+$body-bg:                 $white;
 $font-size-base: 1rem;
 
 // Colors
 $body-color: $gray;
-$primary:    $blue;
+$primary:    $gray;
+$light: $white;
 $success:    $green;
 $info:       $yellow;
 $danger:     $red;
@@ -23,3 +24,136 @@ $border-radius-lg: 2px;
 $border-radius-sm: 2px;
 
 // Override other variables below!
+
+// fonts
+
+h1 {
+  font-size: 68px;
+  font-weight: 700;
+  line-height: 67px;
+}
+
+h2 {
+  font-size: 48px;
+  line-height: 46px;
+  font-weight: 400;
+}
+
+h3 {
+  font-size: 36px;
+  line-height: 35px;
+  font-weight: 400;
+}
+
+p {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 26px;
+}
+
+
+// buttons
+
+.btn-primary {
+  border: 2px solid #233531;
+  box-sizing: border-box;
+  height: 52.84918212890625px;
+  width: 200px;
+  border-radius: 50px!important;
+}
+
+.btn-outline-primary {
+  border: 2px solid #233531;
+  box-sizing: border-box;
+  height: 52.84918212890625px;
+  width: 200px;
+  border-radius: 50px!important;
+}
+
+.btn-light {
+  border: 2px solid $white;
+  box-sizing: border-box;
+  height: 52.84918212890625px;
+  width: 200px;
+  border-radius: 50px!important;
+}
+
+.btn-outline-light {
+  border: 2px solid $white;
+  box-sizing: border-box;
+  height: 52.84918212890625px;
+  width: 200px;
+  border-radius: 50px!important;
+}
+
+
+// mobile
+
+// mobile fonts
+
+@media (max-width: 375px) {
+  h1 {
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 98.2%;
+  }
+
+  h2 {
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 23px;
+  }
+
+  h3 {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 17px;
+  }
+
+  p {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+// buttons
+
+  .btn-primary {
+    border: 2px solid #233531;
+    box-sizing: border-box;
+    height: 53px;
+    width: 336px;
+    border-radius: 50px!important;
+  }
+
+  .btn-outline-primary {
+    border: 2px solid #233531;
+    box-sizing: border-box;
+    height: 53px;
+    width: 336px;
+    border-radius: 50px!important;
+  }
+
+  .btn-light {
+    border: 2px solid $white;
+    box-sizing: border-box;
+    height: 53px;
+    width: 336px;
+    border-radius: 50px!important;
+  }
+
+  .btn-outline-light {
+    border: 2px solid $white;
+    box-sizing: border-box;
+    height: 53px;
+    width: 336px;
+    border-radius: 50px!important;
+  }
+}
+
+.darkbox {
+  width: 500px;
+  height: 500px;
+  background-color: $gray;
+
+}
