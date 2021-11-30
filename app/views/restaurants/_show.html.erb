@@ -1,3 +1,30 @@
 <div class="container">
 
+<%= link_to "Back", restaurants_path, class: "btn btn btn-success mt-3" %>
+
+<div class="show-gallery">
+  <div class="row p-3">
+    <% @restaurant.photos do |photo| %>
+        <div class="col-lg-1 col-sm-12">
+          <%= link_to '#restaurant-gallery-image', 'data-toggle' => 'modal' do %>
+            <%= image_tag @restaurant.img_url, class:'plant-gallery-image' %>
+          <% end %>
+        </div>
+        <% end %>
+  </div>
+</div>
+
+<div class="show-restaurant">
+  <h1><%= @restaurant.name %></h1>
+  <p><%= @restaurant.description%></p>
+  <%= link_to "Directions", restaurants_path, class: "btn btn btn-success mt-3" %>
+  <%= link_to "Book", restaurants_path, class: "btn btn btn-success mt-3" %>
+</div>
+
+<div class="show-map">
+</div>
+
+<div class="show-reviews">
+</div>
+
 </div>
