@@ -151,9 +151,24 @@ p {
   }
 }
 
-.darkbox {
-  width: 500px;
-  height: 500px;
-  background-color: $gray;
+// selected text color
 
+::selection {
+  background: rgba(90, 158, 101, 0.8);
+  color: $white; /* WebKit/Blink Browsers */
+}
+
+.restaurant-list {
+  width: 32rem;
+  .card {
+    width: 100%;
+    border-radius: 10px!important;
+    .card-img-top {
+      // width: 100%;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      height: 16rem;
+      object-fit: cover;
+    }
+  }
 }

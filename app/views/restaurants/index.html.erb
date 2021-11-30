@@ -1,0 +1,14 @@
+<div class="container d-flex py-4">
+  <div class="restaurant-list">
+    <% @restaurants.each do |restaurant| %>
+        <div class="card my-3">
+        <%= image_tag restaurant.image, class:"card-img-top" %>
+        <h3 class="card-title p-3"><%= restaurant.name %></h3>
+        </div>
+    <% end %>
+
+  </div>
+  <div class="restaurant-map">
+
+  </div>
+</div>
