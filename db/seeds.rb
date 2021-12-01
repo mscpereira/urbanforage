@@ -22,7 +22,7 @@ puts "Planting new ones"
   latitude: Faker::Address.latitude,
   longitude: Faker::Address.longitude,
   image: 'https://source.unsplash.com/random',
-  description: Faker::Restaurant.description
+  description: Faker::Restaurant.description,
 )
 end
 
