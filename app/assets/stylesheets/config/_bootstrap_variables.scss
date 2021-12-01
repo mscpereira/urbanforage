@@ -159,10 +159,15 @@ p {
 }
 
 .restaurant-list {
-  width: 32rem;
+  // width: 100%;
   .card {
     width: 100%;
     border-radius: 10px!important;
+    border: none;
+    box-shadow: 4px 4px 4px #e9e8e6;
+    i {
+      font-size: 40px;
+    }
     .card-img-top {
       // width: 100%;
       border-top-left-radius: 10px;
@@ -171,4 +176,35 @@ p {
       object-fit: cover;
     }
   }
+  .list-group-item {
+    background-color: $gray;
+    color: $white;
+    position: relative;
+    top: 10;
+    // font-family: 'Degular';
+    h4 {
+      font-weight: 300;
+      font-size: 24px;
+    }
+    .btn-outline-light {
+      height: 53px;
+      width: 120px;
+      padding: 5px;
+    }
+  }
+}
+
+.restaurant-map {
+  height: 99vh;
+  background-color: $green;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  border-radius: 10px;
+}
+
+.crossRotate:active {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
 }
