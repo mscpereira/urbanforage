@@ -19,8 +19,8 @@ puts "Planting new ones"
   phone_number: Faker::PhoneNumber.cell_phone,
   menu: rand(1..10),
   price_range: "$" * rand(1..4),
-  lat: Faker::Address.latitude,
-  lon: Faker::Address.longitude,
+  latitude: Faker::Address.latitude,
+  longitude: Faker::Address.longitude,
   image: 'https://source.unsplash.com/random'
 )
 end
