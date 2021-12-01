@@ -1,0 +1,42 @@
+
+
+<% if user_signed_in? %>
+  <div class="menu-wrap">
+    <%= image_tag "logo-green", class: "logo" %>
+    <div class="drop-d">
+    <input type="checkbox" class="toggler">
+    <div class="hamburger"><div></div></div>
+    <div class="menu">
+      <div>
+        <div>
+          <ul>
+            <li><a href="#"><%= link_to 'Home', root_path%></a></li>
+            <li><a href="#"><%= link_to 'Change the vibe', vibes_path %></a></li>
+            <li><a href="#"><%= link_to "Log out", destroy_user_session_path, method: :delete %></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+<% else %>
+  <div class="menu-wrap">
+  <%= image_tag "logo-green", class: "logo" %>
+  <div class="drop-d">
+    <input type="checkbox" class="toggler">
+    <div class="hamburger"><div></div></div>
+    <div class="menu">
+      <div>
+        <div>
+          <ul>
+            <li><a href="#"><%= link_to 'Home', root_path %></a></li>
+            <li><a href="#"><%= link_to "Sign up", new_user_registration_path %></a></li>
+            <li><a href="#"><%= link_to "Log in", new_user_session_path %></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+   </div>
+<% end %>
+<hr>
