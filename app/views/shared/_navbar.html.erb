@@ -1,0 +1,50 @@
+
+<!--Navbar-->
+<nav class="navbar navbar-light amber lighten-4 mb-4">
+
+  <!-- Navbar brand -->
+  <a class="navbar-brand"><%= image_tag "logo-green", class: "logo" %></a>
+
+  <!-- Collapse button -->
+<div class="dropdown">
+
+  <!-- Collapsible content -->
+  <div class="collapse navbar-collapse" id="navbarSupportedContent20">
+
+    <!-- Links -->
+    <% if user_signed_in? %>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link"> <%= link_to 'Home', root_path, class: "dropdown-item"%> <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"> <%= link_to 'Change the vibe', vibes_path, class: "dropdown-item" %> </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"> <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %> </a>
+      </li>
+    </ul>
+    <% else %>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <p class="nav-link"> <%= link_to 'Home', root_path, class: "dropdown-item" %> <span class="sr-only">(current)</span></p>
+      </li>
+      <li class="nav-item">
+        <p class="nav-link"> <%= link_to "Sign up", new_user_registration_path, class: "dropdown-item" %> </p>
+      </li>
+      <li class="nav-item">
+        <p class="nav-link"> <%= link_to "Log in", new_user_session_path, class: "dropdown-item" %> </p>
+      </li>
+    </ul>
+    <% end %>
+    <!-- Links -->
+  </div>
+  <button class="navbar-toggler first-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent20"
+    aria-controls="navbarSupportedContent20" aria-expanded="false" aria-label="Toggle navigation">
+    <div class="animated-icon1"><span id="span1"></span><span id="span2"></span><span id="span3"></span></div>
+  </button>
+  <!-- Collapsible content -->
+
+</nav>
+<!--/.Navbar-->
+</div>
