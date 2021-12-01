@@ -28,3 +28,11 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
 });
+
+import { initMapbox } from '../plugins/init_mapbox';
+import { initMapboxShow } from '../plugins/init_mapbox_show';
+
+document.addEventListener('turbolinks:load', () => {
+  initMapbox();
+  initMapboxShow();
+})

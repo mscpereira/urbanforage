@@ -5,11 +5,11 @@ class RestaurantsController < ApplicationController
   end
 
   def show
-    @restaurant = Restautant.find(params[:id])
+
+    @restaurant = Restaurant.find(params[:id])
     @markers = {
-      lat: @restaurant.lat,
-      lng: @restaurant.lon
+      lat: @restaurant.latitude,
+      lng: @restaurant.longitude
      }
   end
-
 end
