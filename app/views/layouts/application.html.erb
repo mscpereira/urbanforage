@@ -19,7 +19,13 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+
+    <% if action_name == "home" %>
+    <%= yield %>
+    <% else %>
     <%= render 'shared/navbar' %>
     <%= yield %>
+<% end %>
+
   </body>
 </html>

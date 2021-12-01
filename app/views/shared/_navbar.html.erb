@@ -3,7 +3,7 @@
 <nav class="navbar navbar-light amber lighten-4 mb-4">
 
   <!-- Navbar brand -->
-  <a class="navbar-brand">Urban Forage</a>
+  <a class="navbar-brand"><%= image_tag "logo-green", class: "logo" %></a>
 
   <!-- Collapse button -->
 <div class="dropdown">
@@ -15,25 +15,25 @@
     <% if user_signed_in? %>
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link"> <%= link_to 'Home', root_path %> <span class="sr-only">(current)</span></a>
+        <a class="nav-link"> <%= link_to 'Home', root_path, class: "dropdown-item"%> <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link"> <%= link_to 'Change the vibe', vibes_path %> </a>
+        <a class="nav-link"> <%= link_to 'Change the vibe', vibes_path, class: "dropdown-item" %> </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link"> <%= link_to "Log out", destroy_user_session_path, method: :delete %> </a>
+        <a class="nav-link"> <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %> </a>
       </li>
     </ul>
     <% else %>
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <p class="nav-link"> <%= link_to 'Home', root_path %> <span class="sr-only">(current)</span></p>
+        <p class="nav-link"> <%= link_to 'Home', root_path, class: "dropdown-item" %> <span class="sr-only">(current)</span></p>
       </li>
       <li class="nav-item">
-        <p class="nav-link"> <%= link_to "Sign up", new_user_registration_path %> </p>
+        <p class="nav-link"> <%= link_to "Sign up", new_user_registration_path, class: "dropdown-item" %> </p>
       </li>
       <li class="nav-item">
-        <p class="nav-link"> <%= link_to "Log in", new_user_session_path %> </p>
+        <p class="nav-link"> <%= link_to "Log in", new_user_session_path, class: "dropdown-item" %> </p>
       </li>
     </ul>
     <% end %>

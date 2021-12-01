@@ -27,18 +27,24 @@
 
 .container-header {
   width: 100%;
-  margin-bottom: 200px;
+  margin-bottom: 270px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  h1 {
-    font-size: 55px;
-    color: $white;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-shadow: 1px 1px 1px rgba($color: $gray, $alpha: 0.3);
+  img {
+    margin-right: 60px;
   }
 }
+
+.container-login {
+  button {
+    transition: all .4s ease-out;
+  }
+  button:hover {
+    transform: translate(-1px, -2px);
+  }
+}
+
 .container-info {
   margin-left: 30px;
   max-width: 950px;
@@ -56,7 +62,7 @@
   }
   .btn:hover {
     box-shadow: 2px 2px 2px rgba($color: $gray, $alpha: 0.6);
-    transform: translate(0, -3px);
+    transform: translate(-1px, -2px);
   }
 }
 .notice {
@@ -77,10 +83,15 @@
     width: 100%;
   }
   .container-header button {
-    width: 150px!important;
+    // width: 150px!important;
   }
-  .container-login .btn {
-    box-shadow: 1px 1px 1px rgba($color: #000000, $alpha: 0.3);
+  .container-login{
+    margin-left: 20px;
+    button {
+      box-shadow: 1px 1px 1px rgba($color: #000000, $alpha: 0.3);
+      margin-left: 0;
+      margin-top: 20px;
+    }
   }
 }
 
@@ -88,10 +99,6 @@
   /* For a screen < 720px, this CSS will be read */
   .container-home {
     width: 100%;
-  }
-
-  .container-title h1 {
-    font-size: 55px;
   }
 
   .container-info {
@@ -102,24 +109,28 @@
   }
 
   .container-header {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  button {
-    width: 100px!important;
-    margin-left: 100px;
-    margin-top: 10px;
-    height: 40px;
+    width: 100%;
+    display: grid;
+    button {
+      // width: 100px!important;
+      margin-left: 100px;
+      margin-top: 10px;
+      height: 40px;
+    }
   }
-}
 
-.container-login {
-  display: grid;
-  justify-content: space-between;
-}
-  .container-login .btn {
-    box-shadow: 1px 1px 1px rgba($color: #000000, $alpha: 0.3);
+  .container-login {
+    display: grid;
+    justify-content: space-between;
+  }
+
+  .container-login{
+    margin-left: 20px;
+    button {
+      box-shadow: 1px 1px 1px rgba($color: #000000, $alpha: 0.3);
+      margin-left: 0;
+      margin-top: 20px;
+    }
   }
 }
 
@@ -129,24 +140,37 @@
     width: 100%;
   }
 
-  .container-title h1 {
-    font-size: 45px;
-  }
 
   .container-info {
     margin-left: 10px;
     h1 {
       font-size: 45px;
     }
+    button {
+      width: 200px !important;
+      margin-left: 0;
+    }
   }
 
-  .container-header button {
-    width: 100px!important;
+  .container-header {
+    display: grid;
+  }
+  img {
+    margin-right: 50px;
+  }
+  button {
+    width: 200px!important;
     margin-left: 100px;
     margin-top: 10px;
     height: 40px;
   }
-  .container-login .btn {
-    box-shadow: 1px 1px 1px rgba($color: #000000, $alpha: 0.3);
+
+  .container-login{
+    margin-left: 20px;
+    button {
+      box-shadow: 1px 1px 1px rgba($color: #000000, $alpha: 0.3);
+      margin-left: 0;
+      margin-top: 20px;
+    }
   }
 }

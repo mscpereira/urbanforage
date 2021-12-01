@@ -172,7 +172,7 @@ left: 8px;
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
-    padding: 1.5rem 1rem;
+    padding: 1.2rem 1rem 0.3rem;
 }
 
 .dropdown {
@@ -198,4 +198,8 @@ left: 8px;
 
 .collapse {
   align-self: flex-start;
+}
+
+.logo {
+  width: 400px;
 }
