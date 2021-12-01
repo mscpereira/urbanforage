@@ -29,6 +29,15 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
 });
 
+
+import { initMapbox } from '../plugins/init_mapbox';
+import { initMapboxShow } from '../plugins/init_mapbox_show';
+
+document.addEventListener('turbolinks:load', () => {
+  initMapbox();
+  initMapboxShow();
+})
+
 $(document).ready(function () {
 
   $('.first-button').on('click', function () {
@@ -44,3 +53,4 @@ $(document).ready(function () {
     $('.animated-icon3').toggleClass('open');
   });
 });
+
