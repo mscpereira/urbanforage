@@ -7,22 +7,24 @@
             <%= image_tag restaurant.image, class:"card-img-top" %>
               <div class="restaurant-list-title d-flex justify-content-between">
                 <h3 class="card-title p-3"><%= restaurant.name %></h3>
-                <i class="ph-plus-circle p-3 crossRotate" data-action="click" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"></i>
+                <i class="ph-plus-circle p-3 crossRotate" data-action="click" data-toggle="collapse" href="#collapse<%= restaurant.id %>" role="button" aria-expanded="false" aria-controls="collapseExample"></i>
               </div>
             </div>
-            <div class="collapse" id="collapseExample">
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item d-flex justify-content-between align-items-end pt-5">
-                  <h4>Add to collection</h4>
-                  <button class='btn btn-outline-light'>New</button>
-                </li>
-                <li class="list-group-item">
-                  <p>Sunday brunch</p>
-                </li>
-                <li class="list-group-item">
-                  <p>Creative night out</p>
-                </li>
-              </ul>
+            <div id="add-to">
+              <div class="collapse" id="collapse<%= restaurant.id %>">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item d-flex justify-content-between align-items-end pt-5">
+                    <h4>Add to collection</h4>
+                    <button class='btn btn-outline-light'>New</button>
+                  </li>
+                  <li class="list-group-item">
+                    <p>Sunday brunch</p>
+                  </li>
+                  <li class="list-group-item">
+                    <p>Creative night out</p>
+                  </li>
+                </ul>
+              </div>
             </div>
         <% end %>
     </div>
