@@ -1,13 +1,19 @@
 <div class="container-vibes">
   <div class="container">
     <div class="row">
-      <% @vibes.each_with_index do |vibe, i| %>
-      <div class="col-lg-4 col-md-4 col-sm-12">
-        <div class="card cards-vibe justify-content-center align-items-center" style="background-image:url(https://images.unsplash.com/photo-1494346480775-936a9f0d0877?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=816&q=80);">
-          <div class="p2"><p><%= vibe.name %></p></div>
-        </div>
-      </div>
-      <% end %>
+      <form action="/restaurants">
+        <% @vibes.each do |vibe| %>
+          <div class="col-lg-4 col-md-4 col-sm-12">
+            <input class="my-class" type="checkbox" id="vibe-<%=vibe.id%>" name="vibe-<%=vibe.id%>">
+            <label for="vibe-<%=vibe.id%>">
+              <div class="card cards-vibe justify-content-center align-items-center" style="background-image:url(https://images.unsplash.com/photo-1494346480775-936a9f0d0877?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=816&q=80);">
+                <div class="p2"><h3><%= vibe.name %></h3></div>
+              </div>
+            </label>
+          </div>
+        <% end %>
+        <input type="submit" value="View">
+      </form>
     </div>
     <div class="d-grip d-md-flex justify-content-md-end">
       <%= link_to "View Restaurants", restaurants_path, class: 'btn-ghost' %>

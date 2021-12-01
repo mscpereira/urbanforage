@@ -1,38 +1,91 @@
-.container-vibes {
-  border: 5px;
-  background-color: $green;
-  width: 100%;
-  height: 100vh;
-  padding-top: 200px;
-}
+// .container-vibes {
+//   border: 5px;
+//   background-color: $white;
+//   width: 100%;
+//   height: 100vh;
+//   padding-top: 200px;
+// }
 
-.cards-vibe {
-  margin-bottom: 15px;
-  font-family: $body-font;
-  font-weight: bold;
-  color: #FEFCF3;
-  height: 150px;
-  border-radius: 15px;
-  background-size: cover;
-  background-position: center;
-  p {
-    margin: 0;
-  }
-}
+// .cards-vibe {
+//   position: relative;
+//   overflow: hidden;
+//   margin-bottom: 15px;
+//   height: 150px;
+//   border-radius: 15px;
+//   background-size: cover;
+//   background-position: center;
+//   box-shadow: 5px 4px 25px 1px rgba(0,0,0,0.37);
+//   p {
+//     margin: 0;
+//   }
+// }
 
-.btn-ghost {
-  color: #FEFCF3;
-  border: 1px solid #FEFCF3;
-  background-color: #5582b6;
-  border-width: thing;
-  padding: 8px 18px;
-  border-radius: 20px;
-  font-weight: 1px;
-  opacity: 0.6;
-  transition: opacity 0.3s ease;
-  margin: 4px;
-}
+// // .my-class {
+// //   position: absolute;
+// //   transform: scale(0);
+// // }
 
-.notice {
-  margin: 0;
-}
+// // .my-class + label {
+// //   cursor: pointer;
+// // }
+
+// // .my-class:checked + label {
+
+// // }
+
+// .card:before {
+//   position: absolute;
+//   content: '';
+//   width: 80%;
+//   height: 220%;
+//   background: rgba(48,101,94,0.7);
+//   top: -50%;
+//   left: -100%;
+//   z-index: 1;
+//   transform: rotate(25deg);
+//   transform-origin: center top 0;
+//   transition: .5s;
+// }
+
+// .card:hover::before {
+//   left: 10%;
+// }
+
+// .p2 {
+//   font-family: $body-font;
+//   font-weight: bold;
+//   color: #FEFCF3;
+//   width: 100%;
+//   padding: 0 20px;
+//   position: absolute;
+//   top: 100%;
+//   left: 0;
+//   z-index: 2;
+//   transition: 1.1s;
+// }
+
+// .p2 h3 {
+//   font-family: $body-font;
+// }
+
+// .card:hover .p2 {
+//   top: 80%;
+// }
+
+// .btn-ghost {
+//   color: $white;
+//   border: 1px solid $white;
+//   background-color: $green;
+//   border-width: thing;
+//   padding: 8px 18px;
+//   border-radius: 20px;
+//   font-weight: 1px;
+//   opacity: 0.6;
+//   transition: opacity 0.3s ease;
+//   margin: 4px;
+//   box-shadow: 5px 4px 25px 1px rgba(0,0,0,0.37);
+// }
+
+// .notice {
+//   margin: 0;
+// }
