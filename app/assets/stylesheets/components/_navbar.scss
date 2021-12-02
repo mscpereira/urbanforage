@@ -1,5 +1,5 @@
 :root {
-  --primary-color: rgba(13, 110, 139, 0.75);
+  --primary-color: #1b3039;
   --overlay-color: rgba(24, 39, 51 , 0.85);
   --menu-speed: 0.75s;
 }
@@ -8,6 +8,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-image: url(../../images/logo-white.png);
 }
 
 body {
@@ -17,17 +18,26 @@ body {
 
 /* MENU STYLES */
 .menu-wrap {
+  top:0;
+  list-style: none;
+  width: 100%;
+  background-color: $white;
+  transition: 0.3s;
   display: flex;
   justify-content: space-between;
   z-index: 1;
-
+  padding-bottom: 10px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.26);
   img {
     margin: 20px;
   }
-}
+  }
+
 .drop-d {
   position: relative;
 }
+
+
 .menu-wrap .toggler {
   position: absolute;
   z-index: 2;
@@ -73,6 +83,7 @@ body {
   height: 2px;
   background: inherit;
 }
+
 
 /* Moves Line Down */
 .menu-wrap .hamburger > div::after {
@@ -126,6 +137,7 @@ body {
 
 .menu-wrap .menu > div {
   background: var(--overlay-color);
+  background-image: url(../../images/logo-white.png);
   border-radius: 50%;
   width: 200vw;
   height: 200vw;
@@ -148,8 +160,13 @@ body {
 .menu-wrap .menu > div > div > ul > li {
   list-style: none;
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   padding: 1rem;
+  transition: all 0.4s ease-out;
+  &:hover {
+    text-shadow: 1px 1px 1px black;
+    transform: translate(-1px, -2px);
+  }
 }
 
 .menu-wrap .menu > div > div > ul > li > a {
@@ -161,3 +178,5 @@ body {
 .logo {
   width: 300px;
 }
+
+/* ---------- */
