@@ -1,4 +1,6 @@
 class RestaurantsController < ApplicationController
+  before_action :find_restaurant, only: %i[show]
+
   def index
     if params.keys.count == 2
       @restaurants = Restaurant.all
@@ -17,10 +19,16 @@ class RestaurantsController < ApplicationController
 
   def show
     @restaurant = Restaurant.find(params[:id])
-    @reviews_last = @restaurant.reviews.last(3)
+    @review = Review.new
     @markers = {
       lat: @restaurant.latitude,
       lng: @restaurant.longitude
-     }
+    }
+  end
+
+  private
+
+  def find_restaurant
+    @restaurant = Restaurant.find(params[:id])
   end
 end

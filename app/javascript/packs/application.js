@@ -20,6 +20,7 @@ ActiveStorage.start()
 
 // External imports
 import "bootstrap";
+import "controllers"
 
 // Internal imports, e.g:
 import { selectcards } from '../pluggin/vibes_index_controller';
@@ -38,3 +39,11 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initMapboxShow();
 })
+
+$(".crossRotate").click(function () {
+  if ($(this).css("transform") == 'none') {
+    $(this).css("transform", "rotate(45deg)");
+  } else {
+    $(this).css("transform", "");
+  }
+});

@@ -1,0 +1,18 @@
+<nav class="nav-home">
+        <div class="container-home">
+            <div class="logo">
+                <%= image_tag "logo-white", class: "logo" %>
+            </div>
+            <div id="mainListDiv" class="main_list">
+
+                <button class="btn btn-primary"><%= link_to "Log in", new_user_session_path %>
+                <button class="btn btn-outline-light"><%= link_to "Sign up", new_user_registration_path %>
+
+            </div>
+            <span class="navTrigger">
+                <i></i>
+                <i></i>
+                <i></i>
+            </span>
+        </div>
+    </nav>

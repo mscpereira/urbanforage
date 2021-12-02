@@ -1,9 +1,8 @@
 <div class="container">
 
-<%= link_to "Back", restaurants_path, class: "btn btn btn-success mt-3" %>
+  <%= link_to "Back", restaurants_path, class: "btn btn btn-success mt-3" %>
 
   <div class="show-gallery">
-
     <div class="row p-3">
       <% @restaurant.photos do |photo| %>
         <div class="col-lg-1 col-sm-12">
@@ -28,21 +27,22 @@
     </div>
   </div>
 
+  <div data-controller="insert-in-list" data-insert-in-list-position-value="beforeend" class="show-reviews m-3">
+    <div data-insert-in-list-target="items" class="review">
+      <% if @restaurant.reviews.blank? %>
+        <p><small>"Be the first to leave a review for <%= @restaurant.name %>"...</small></p>
+      <% else %>
+        <% @restaurant.reviews.last(4).each do |review| %>
+          <%= render 'restaurants/review', review: review %>
+          <p></p>
+        <% end %>
+      <% end %>
+    </div>
 
-  <div class="show-reviews m-3">
-    <% @reviews_last.each do |rev| %>
-    <div class="review">
-      <p>
-        <%= "<i class='fas fa-star' id='star'></i>".html_safe * rev.rating %><%= "<i class='far fa-star' id='star'></i>".html_safe * (5 - rev.rating) %>
-        (<small><em><%= rev.created_at.strftime("%d-%m-%Y")%></small></em>)
-        </p>
-      <%= rev.user.first_name.capitalize %> <%= rev.user.last_name.capitalize %> said: <em>"<%= rev.description %>"</em>
-    </div>
-    <% end %>
-      </div>
-      <%= link_to "Directions", @restaurant.website, class: "btn btn btn-success mt-3", target: "_blank" %>
-      <%= link_to "Book", @restaurant.website, class: "btn btn btn-success mt-3", target: "_blank" %>
-      <%= link_to 'Add a review', new_restaurant_review_path(@restaurant), class: "btn btn btn-success mt-3", target: "_blank" %>
-    </div>
+    <%= link_to "Directions", @restaurant.website, class: "btn btn btn-success mt-3", target: "_blank" %>
+    <%= link_to "Book", @restaurant.website, class: "btn btn btn-success mt-3", target: "_blank" %>
+    <button id="review" type="button" class="btn btn btn-success mt-3" data-toggle="modal" data-target="#exampleModal">Add a review</button>
+
+    <%= render 'restaurants/modal_new', restaurant: @restaurant, review: @review %>
   </div>
 </div>
