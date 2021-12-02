@@ -1,6 +1,9 @@
 require 'google_search_results'
 
 puts "Pulling out restaurant seeds"
+RestaurantVibe.destroy_all
+Photo.destroy_all
+Vibe.destroy_all
 Restaurant.destroy_all
 
 # SETTING UP SCENIC VIBE
