@@ -22,14 +22,13 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-
-    <%= yield %>
     <% if action_name == "home" %>
     <%= yield %>
     <% else %>
     <%= render 'shared/navbar' %>
     <%= yield %>
-<% end %>
+    <%= render 'shared/footer' %>
+    <% end %>
 
   </body>
 </html>

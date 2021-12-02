@@ -1,0 +1,37 @@
+.footer-icons {
+  font-size: 30px;
+  margin: 5px;
+  opacity: 0.8;
+  &:hover {
+    opacity: 1;
+    cursor: pointer;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.199);
+  }
+}
+
+.footer-bg {
+  background-color: #FEFCF3;
+  color:#233531;
+}
+
+.facebook-icon {
+  color: #3B5998;
+}
+
+.linkedin-icon {
+  color: #007bb5;
+}
+
+.instagram-icon {
+  color: #b3358b;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+  margin-top: auto;
+}
