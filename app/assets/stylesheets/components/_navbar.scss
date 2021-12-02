@@ -10,11 +10,6 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: 'Roboto', sans-serif;
-  line-height: 1.4;
-}
-
 /* MENU STYLES */
 .menu-wrap {
   top:0;
@@ -26,7 +21,7 @@ body {
   justify-content: space-between;
   z-index: 1;
   padding-bottom: 10px;
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.26);
+  // box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.26);
   img {
     margin: 20px;
   }
@@ -174,7 +169,7 @@ body {
 }
 
 .logo {
-  width: 300px;
+  width: 200px;
 }
 
 /* ---------- */

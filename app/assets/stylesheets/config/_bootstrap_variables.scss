@@ -16,6 +16,7 @@ $success:    $green;
 $info:       $yellow;
 $danger:     $red;
 $warning:    $orange;
+$secondary: $green;
 
 // Buttons & inputs' radius
 $border-radius:    2px;
@@ -46,8 +47,8 @@ h3 {
 
 p {
   font-weight: 300;
-  font-size: 18px;
-  line-height: 26px;
+  font-size: 16px;
+  line-height: 20px;
 }
 
 
@@ -85,10 +86,36 @@ p {
   border-radius: 50px!important;
 }
 
+.btn-secondary {
+  color: $green!important;
+  background-color: $white!important;
+  border-color: $green!important;
+}
+
+.btn-secondary.active:not(:disabled):not(.disabled) {
+    color: $white!important;
+    background-color: $green!important;
+    border-color: $green!important;
+}
 
 // mobile
 
 // mobile fonts
+
+@media (min-width: 1024px) {
+  .view-toggle {
+    visibility: hidden;
+  }
+}
+
+@media (max-width: 1024px) {
+  .restaurant-map {
+    visibility: hidden;
+  }
+  .restaurant-index {
+    flex-direction: column;
+  }
+}
 
 @media (max-width: 375px) {
   h1 {
@@ -213,6 +240,13 @@ p {
   border-radius: 10px;
 }
 
+.view-toggle {
+  i {
+    font-size: 1.3rem;
+    font-weight: bolder;
+    text-align: center;
+  }
+}
 .crossRotate:active {
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
