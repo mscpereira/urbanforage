@@ -12,7 +12,7 @@ scenic_params = {
   q: "restaurants+with+view",
   ll: "@38.7223,-9.1393,15.1z",
   type: "search",
-  api_key: "b8595d7925e900bb88f7e1ec04206a801a09b4124c38d63ddf193c30c2acc299"
+  api_key: "4d9950649d8ed5a64d671aacd6950b0ba30688cff9980b1eeffd566489295219"
 }
 
 scenic_search = GoogleSearch.new(scenic_params)
@@ -23,7 +23,7 @@ scenic_results.each do |result|
     engine: "google_maps_photos",
     q: "",
     data_id: result[:data_id],
-    api_key: "b8595d7925e900bb88f7e1ec04206a801a09b4124c38d63ddf193c30c2acc299"
+    api_key: "4d9950649d8ed5a64d671aacd6950b0ba30688cff9980b1eeffd566489295219"
   }
   scenic_photo_search = GoogleSearch.new(scenic_photo_params)
   scenic_photos = scenic_photo_search.get_hash[:photos]
@@ -69,7 +69,7 @@ melodic_params = {
   q: "restaurants+with+live+music",
   ll: "@38.7223,-9.1393,15.1z",
   type: "search",
-  api_key: "b8595d7925e900bb88f7e1ec04206a801a09b4124c38d63ddf193c30c2acc299"
+  api_key: "4d9950649d8ed5a64d671aacd6950b0ba30688cff9980b1eeffd566489295219"
 }
 
 melodic_search = GoogleSearch.new(melodic_params)
@@ -80,7 +80,7 @@ melodic_results.each do |result|
     engine: "google_maps_photos",
     q: "",
     data_id: result[:data_id],
-    api_key: "b8595d7925e900bb88f7e1ec04206a801a09b4124c38d63ddf193c30c2acc299"
+    api_key: "4d9950649d8ed5a64d671aacd6950b0ba30688cff9980b1eeffd566489295219"
   }
   melodic_photo_search = GoogleSearch.new(melodic_photo_params)
   melodic_photos = melodic_photo_search.get_hash[:photos]
@@ -124,7 +124,7 @@ cozy_params = {
   q: "restaurant+simple+snug",
   ll: "@38.7223,-9.1393,15.1z",
   type: "search",
-  api_key: "b8595d7925e900bb88f7e1ec04206a801a09b4124c38d63ddf193c30c2acc299"
+  api_key: "4d9950649d8ed5a64d671aacd6950b0ba30688cff9980b1eeffd566489295219"
 }
 
 cozy_search = GoogleSearch.new(cozy_params)
@@ -135,7 +135,7 @@ cozy_results.each do |result|
     engine: "google_maps_photos",
     q: "",
     data_id: result[:data_id],
-    api_key: "b8595d7925e900bb88f7e1ec04206a801a09b4124c38d63ddf193c30c2acc299"
+    api_key: "4d9950649d8ed5a64d671aacd6950b0ba30688cff9980b1eeffd566489295219"
   }
   cozy_photo_search = GoogleSearch.new(cozy_photo_params)
   cozy_photos = cozy_photo_search.get_hash[:photos]
@@ -181,7 +181,7 @@ earthy_params = {
   q: "restaurant+plants+interior",
   ll: "@38.7223,-9.1393,15.1z",
   type: "search",
-  api_key: "b8595d7925e900bb88f7e1ec04206a801a09b4124c38d63ddf193c30c2acc299"
+  api_key: "4d9950649d8ed5a64d671aacd6950b0ba30688cff9980b1eeffd566489295219"
 }
 
 earthy_search = GoogleSearch.new(earthy_params)
@@ -192,7 +192,7 @@ earthy_results.each do |result|
     engine: "google_maps_photos",
     q: "",
     data_id: result[:data_id],
-    api_key: "b8595d7925e900bb88f7e1ec04206a801a09b4124c38d63ddf193c30c2acc299"
+    api_key: "4d9950649d8ed5a64d671aacd6950b0ba30688cff9980b1eeffd566489295219"
   }
   earthy_photo_search = GoogleSearch.new(earthy_photo_params)
   earthy_photos = earthy_photo_search.get_hash[:photos]
@@ -237,7 +237,7 @@ minimalist_params = {
   q: "restaurant+modern+design+decor",
   ll: "@38.7223,-9.1393,15.1z",
   type: "search",
-  api_key: "b8595d7925e900bb88f7e1ec04206a801a09b4124c38d63ddf193c30c2acc299"
+  api_key: "4d9950649d8ed5a64d671aacd6950b0ba30688cff9980b1eeffd566489295219"
 }
 
 minimalist_search = GoogleSearch.new(minimalist_params)
@@ -248,7 +248,7 @@ minimalist_results.each do |result|
     engine: "google_maps_photos",
     q: "",
     data_id: result[:data_id],
-    api_key: "b8595d7925e900bb88f7e1ec04206a801a09b4124c38d63ddf193c30c2acc299"
+    api_key: "4d9950649d8ed5a64d671aacd6950b0ba30688cff9980b1eeffd566489295219"
   }
   minimalist_photo_search = GoogleSearch.new(minimalist_photo_params)
   minimalist_photos = minimalist_photo_search.get_hash[:photos]
@@ -292,7 +292,7 @@ alternative_params = {
   q: "restaurant+interesting+concept+hipster",
   ll: "@38.7223,-9.1393,15.1z",
   type: "search",
-  api_key: "b8595d7925e900bb88f7e1ec04206a801a09b4124c38d63ddf193c30c2acc299"
+  api_key: "4d9950649d8ed5a64d671aacd6950b0ba30688cff9980b1eeffd566489295219"
 }
 
 alternative_search = GoogleSearch.new(alternative_params)
@@ -303,7 +303,7 @@ alternative_results.each do |result|
     engine: "google_maps_photos",
     q: "",
     data_id: result[:data_id],
-    api_key: "b8595d7925e900bb88f7e1ec04206a801a09b4124c38d63ddf193c30c2acc299"
+    api_key: "4d9950649d8ed5a64d671aacd6950b0ba30688cff9980b1eeffd566489295219"
   }
   alternative_photo_search = GoogleSearch.new(alternative_photo_params)
   alternative_photos = alternative_photo_search.get_hash[:photos]
