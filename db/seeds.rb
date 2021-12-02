@@ -6,9 +6,13 @@ Photo.destroy_all
 Vibe.destroy_all
 Restaurant.destroy_all
 
+
+
 # SETTING UP SCENIC VIBE
 
 puts "Planting panoramic scenic restaurant seeds"
+
+scenic_vibe = Vibe.create(name: 'scenic')
 
 scenic_params = {
   engine: "google_maps",
@@ -56,7 +60,7 @@ scenic_results.each do |result|
   end
 
   RestaurantVibe.create(
-    vibe_id: 2,
+    vibe_id: scenic_vibe[:id],
     restaurant_id: scenic_restaurant[:id]
   )
 end
@@ -66,6 +70,8 @@ end
 # GENERATING UP MELODIC VIBES
 
 puts "Tuning up some melodic restaurant seeds"
+
+melodic_vibe = Vibe.create(name: 'melodic')
 
 melodic_params = {
   engine: "google_maps",
@@ -113,7 +119,7 @@ melodic_results.each do |result|
   end
 
   RestaurantVibe.create(
-    vibe_id: 3,
+    vibe_id: melodic_vibe[:id],
     restaurant_id: melodic_restaurant[:id]
   )
 end
@@ -121,6 +127,8 @@ end
 # GENERATING COZY VIBES
 
 puts "Snuggling up some cozy restaurant seeds"
+
+cozy_vibe = Vibe.create(name: 'cozy')
 
 cozy_params = {
   engine: "google_maps",
@@ -168,7 +176,7 @@ cozy_results.each do |result|
   end
 
   RestaurantVibe.create(
-    vibe_id: 4,
+    vibe_id: cozy_vibe[:id],
     restaurant_id: cozy_restaurant[:id]
   )
 end
@@ -178,6 +186,8 @@ end
 # GENERATING EARTHY VIBES
 
 puts "Planting some earthy, organic restaurant seeds"
+
+earthy_vibe = Vibe.create(name: 'earthy')
 
 earthy_params = {
   engine: "google_maps",
@@ -225,7 +235,7 @@ earthy_results.each do |result|
   end
 
   RestaurantVibe.create(
-    vibe_id: 5,
+    vibe_id: earthy_vibe[:id],
     restaurant_id: earthy_restaurant[:id]
   )
 end
@@ -234,6 +244,8 @@ end
 # GENERATING MINIMALIST VIBES
 
 puts "Asking interior designer for some minimalist restaurant seeds"
+
+minimalist_vibe = Vibe.create(name: 'minimalist')
 
 minimalist_params = {
   engine: "google_maps",
@@ -281,7 +293,7 @@ minimalist_results.each do |result|
   end
 
   RestaurantVibe.create(
-    vibe_id: 6,
+    vibe_id: minimalist_vibe[:id],
     restaurant_id: minimalist_restaurant[:id]
   )
 end
@@ -289,6 +301,8 @@ end
 # GENERATING ALTERNATIVE VIBES
 
 puts "Thrifting some alternative restaurant seeds"
+
+alternative_vibe = Vibe.create(name: 'alternative')
 
 alternative_params = {
   engine: "google_maps",
@@ -336,7 +350,7 @@ alternative_results.each do |result|
   end
 
   RestaurantVibe.create(
-    vibe_id: 7,
+    vibe_id: alternative_vibe[:id],
     restaurant_id: alternative_restaurant[:id]
   )
 end
