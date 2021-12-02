@@ -15,8 +15,8 @@
     <div class="restaurant-index d-flex justify-content-between">
     <div class="restaurant-list w-100 mr-3">
         <% @restaurants.each do |restaurant| %>
-              <div class="card my-3">
-            <%= link_to restaurant_path(restaurant), class:"text-decoration-none" do %>
+           <div class="card my-3">
+              <%= link_to restaurant_path(restaurant), class:"text-decoration-none" do %>
                 <%= image_tag restaurant.image, class:"card-img-top" %>
               <% end %>
                   <div class="restaurant-list-title d-flex justify-content-between">
