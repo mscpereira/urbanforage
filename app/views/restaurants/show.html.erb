@@ -1,0 +1,48 @@
+<div class="container">
+
+<%= link_to "Back", restaurants_path, class: "btn btn btn-success mt-3" %>
+
+  <div class="show-gallery">
+
+    <div class="row p-3">
+      <% @restaurant.photos do |photo| %>
+        <div class="col-lg-1 col-sm-12">
+          <%= link_to '#restaurant-gallery-image', 'data-toggle' => 'modal' do %>
+            <%= image_tag @restaurant.img_url, class:'restaurant-gallery-image' %>
+          <% end %>
+        </div>
+        <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-6">
+      <h1><%= @restaurant.name %></h1>
+      <p><%= @restaurant.description%></p>
+    </div>
+    <div id="map-show"
+      class="col-6"
+      style=""
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
+
+
+  <div class="show-reviews m-3">
+    <% @reviews_last.each do |rev| %>
+    <div class="review">
+      <p>
+        <%= "<i class='fas fa-star' id='star'></i>".html_safe * rev.rating %><%= "<i class='far fa-star' id='star'></i>".html_safe * (5 - rev.rating) %>
+        (<small><em><%= rev.created_at.strftime("%d-%m-%Y")%></small></em>)
+        </p>
+      <%= rev.user.first_name.capitalize %> <%= rev.user.last_name.capitalize %> said: <em>"<%= rev.description %>"</em>
+    </div>
+    <% end %>
+      </div>
+      <%= link_to "Directions", @restaurant.website, class: "btn btn btn-success mt-3", target: "_blank" %>
+      <%= link_to "Book", @restaurant.website, class: "btn btn btn-success mt-3", target: "_blank" %>
+      <%= link_to 'Add a review', new_restaurant_review_path(@restaurant), class: "btn btn btn-success mt-3", target: "_blank" %>
+    </div>
+  </div>
+</div>

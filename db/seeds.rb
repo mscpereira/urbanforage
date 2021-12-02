@@ -11,7 +11,7 @@ Restaurant.delete_all
 puts "Planting new ones"
 
 16.times do
-  Restaurant.create(
+  Restaurant.create!(
   name: Faker::Restaurant.name,
   cuisine: Faker::Restaurant.type,
   address: Faker::Address.street_address,
@@ -21,7 +21,8 @@ puts "Planting new ones"
   price_range: "$" * rand(1..4),
   latitude: Faker::Address.latitude,
   longitude: Faker::Address.longitude,
-  image: 'https://source.unsplash.com/random'
+  image: 'https://source.unsplash.com/random',
+  description: Faker::Restaurant.description,
 )
 end
 

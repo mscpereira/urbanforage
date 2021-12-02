@@ -3,17 +3,30 @@
     <div class="container-banner">
       <div class="container-header">
         <div class="container-title">
-          <h1>Urban<br>Forage</h1>
+          <%= image_tag "logo-white", class: "logo" %>
         </div>
         <div class="container-login">
-          <button class="btn btn-primary">Login</button>
-          <button class="btn btn-outline-light">Sign up</button>
+        <% if user_signed_in? %>
+          <button class="btn btn-outline-light"><%= link_to "Log out", destroy_user_session_path, method: :delete, id: "logout-link"%></button>
         </div>
       </div>
       <div class="container-info">
-        <h1><span id="title">Find restaurant experiences that match <span class="highlight">your vibe</span></h1>
-        <button class="btn btn-outline-light">Start curating</button>
+        <h1><span id="title">Find restaurant experiences that match <span class="highlight">your vibe</span>, <%= current_user.first_name.capitalize %>.</h1>
+        <button class="btn btn-outline-light"><%= link_to "Start curating", vibes_path %></button>
       </div>
     </div>
   </div>
 </div>
+        <% else %>
+          <button class="btn btn-outline-light"><%= link_to "Log in", new_user_session_path, id: "login-link"%></button>
+          <button class="btn btn-primary"><%= link_to "Sign up", new_user_registration_path, id: "signup-link"%></button>
+          </div>
+      </div>
+      <div class="container-info">
+        <h1><span id="title">Find restaurant experiences that match <span class="highlight">your vibe</span></h1>
+        <button class="btn btn-outline-light"><%= link_to "Start curating", vibes_path %></button>
+      </div>
+    </div>
+  </div>
+</div>
+        <% end %>

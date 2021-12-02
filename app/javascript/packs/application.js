@@ -23,8 +23,18 @@ import "bootstrap";
 
 // Internal imports, e.g:
 import { selectcards } from '../pluggin/vibes_index_controller';
+import { showNav, hidewNav, show } from '../plugins/navbar';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   selectcards();
 });
+
+
+import { initMapbox } from '../plugins/init_mapbox';
+import { initMapboxShow } from '../plugins/init_mapbox_show';
+
+document.addEventListener('turbolinks:load', () => {
+  initMapbox();
+  initMapboxShow();
+})

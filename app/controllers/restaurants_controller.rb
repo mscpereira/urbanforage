@@ -18,10 +18,10 @@ class RestaurantsController < ApplicationController
 
   def show
     @restaurant = Restaurant.find(params[:id])
+    @reviews_last = @restaurant.reviews.last(3)
     @markers = {
-      lat: @restaurant.lat,
-      lng: @restaurant.lon
+      lat: @restaurant.latitude,
+      lng: @restaurant.longitude
      }
   end
-
 end
