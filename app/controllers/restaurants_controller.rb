@@ -3,7 +3,6 @@ class RestaurantsController < ApplicationController
     if params.keys.count == 2
       flash[:alert] = "You need to select at least one vibe!"
       redirect_to :vibes
-    # for each vibe if vibe-id true
     else
       @restaurants = []
       params.each_key do |key|
