@@ -40,10 +40,10 @@ document.addEventListener('turbolinks:load', () => {
   initMapboxShow();
 })
 
-$(".crossRotate").click(function () {
-  if ($(this).css("transform") == 'none') {
-    $(this).css("transform", "rotate(45deg)");
-  } else {
-    $(this).css("transform", "");
-  }
-});
+// $(".crossRotate").click(function () {
+//   if ($(this).css("transform") == 'none') {
+//     $(this).css("transform", "rotate(45deg)");
+//   } else {
+//     $(this).css("transform", "");
+//   }
+// });

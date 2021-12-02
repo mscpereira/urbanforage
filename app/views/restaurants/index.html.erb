@@ -7,7 +7,11 @@
             <%= image_tag restaurant.image, class:"card-img-top" %>
               <div class="restaurant-list-title d-flex justify-content-between">
                 <h3 class="card-title p-3"><%= restaurant.name %></h3>
-                <i class="ph-plus-circle p-3 crossRotate" data-action="click" data-toggle="collapse" href="#collapse<%= restaurant.id %>" role="button" aria-expanded="false" aria-controls="collapseExample"></i>
+                <a><i class="ph-plus-circle p-3 crossRotate"
+                data-action="click" data-toggle="collapse"
+                href="#collapse<%= restaurant.id %>"
+                role="button" aria-expanded="false"
+                aria-controls="collapseExample"></i></a>
               </div>
             </div>
             <div id="add-to">
