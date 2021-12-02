@@ -10,8 +10,8 @@ class RestaurantsController < ApplicationController
           vibe = Vibe.find_by_name(params[key])
           @restaurants += vibe.restaurants
         end
+        @restaurants.uniq!
       end
-      @restaurants.uniq!
     end
   end
 
