@@ -7,7 +7,7 @@ Vibe.destroy_all
 Restaurant.destroy_all
 
 # SETTING UP SCENIC VIBE
-
+puts "-----"
 puts "Planting panoramic scenic restaurant seeds"
 
 scenic_vibe = Vibe.create(name: 'scenic')
@@ -67,6 +67,7 @@ end
 
 # GENERATING UP MELODIC VIBES
 
+puts "-----"
 puts "Tuning up some melodic restaurant seeds"
 
 melodic_vibe = Vibe.create(name: 'melodic')
@@ -123,7 +124,7 @@ melodic_results.each do |result|
 end
 
 # GENERATING COZY VIBES
-
+puts "-----"
 puts "Snuggling up some cozy restaurant seeds"
 
 cozy_vibe = Vibe.create(name: 'cozy')
@@ -175,7 +176,7 @@ cozy_results.each do |result|
 
   RestaurantVibe.create(
     vibe_id: cozy_vibe[:id],
-    restaurant_id: melodic_restaurant[:id]
+    restaurant_id: cozy_restaurant[:id]
   )
 end
 
@@ -183,13 +184,14 @@ end
 
 # GENERATING EARTHY VIBES
 
+puts "-----"
 puts "Planting some earthy, organic restaurant seeds"
 
 earthy_vibe = Vibe.create(name: 'earthy')
 
 earthy_params = {
   engine: "google_maps",
-  q: "restaurant+plants+interior",
+  q: "restaurant+plants+interior+decor",
   ll: "@38.7223,-9.1393,15.1z",
   type: "search",
   api_key: "4d9950649d8ed5a64d671aacd6950b0ba30688cff9980b1eeffd566489295219"
@@ -240,7 +242,7 @@ end
 
 
 # GENERATING MINIMALIST VIBES
-
+puts "-----"
 puts "Asking interior designer for some minimalist restaurant seeds"
 
 minimalist_vibe = Vibe.create(name: 'minimalist')
@@ -297,7 +299,7 @@ minimalist_results.each do |result|
 end
 
 # GENERATING ALTERNATIVE VIBES
-
+puts "-----"
 puts "Thrifting some alternative restaurant seeds"
 
 alternative_vibe = Vibe.create(name: 'alternative')
@@ -353,6 +355,7 @@ alternative_results.each do |result|
   )
 end
 
+puts "------------------------"
 puts "#{Restaurant.count} total restaurant seeds planted, with #{Photo.count} photos attached"
 
 
