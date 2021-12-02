@@ -13,3 +13,7 @@
 @import "pages/index";
 @import "pages/show";
 @import "components/map";
+
+html {
+     scroll-behavior: smooth;
+}

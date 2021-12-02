@@ -2,20 +2,24 @@ class ReviewsController < ApplicationController
   before_action :find_restaurant
   # before_action :find_user
 
-  def new
-    @review = Review.new
-    # authorize @review
-  end
+  # def new
+  #   @review = Review.new
+  #   # authorize @review
+  # end
 
   def create
     @review = Review.new(review_params)
     @review.restaurant = @restaurant
     @review.user = current_user
-    # authorize @review
-    if @review.save
-      redirect_to restaurant_path(@restaurant)
-    else
-      render :new
+
+    respond_to do |format|
+      if @review.save
+        format.html { redirect_to restaurant_path(@restaurant, anchor: "review")}
+      else
+        format.html { render 'restaurants/show' }
+      end
+
+      format.json
     end
   end
 
