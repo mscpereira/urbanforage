@@ -1,7 +1,8 @@
 class RestaurantsController < ApplicationController
   def index
     if params.keys.count == 2
-      @restaurants = Restaurant.all
+      flash[:alert] = "You need to select at least one vibe!"
+      redirect_to :vibes
     # for each vibe if vibe-id true
     else
       @restaurants = []

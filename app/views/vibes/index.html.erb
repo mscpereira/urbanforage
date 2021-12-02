@@ -1,7 +1,7 @@
 <div class="container-vibes">
   <div class="container">
     <form action="/restaurants">
-      <div class="row">
+      <div class="row justify-content-end">
         <% @vibes.each do |vibe| %>
           <div class="col-md-4 col-sm-12">
             <input class="my-class" type="checkbox" id="vibe-<%=vibe.id%>" name="vibe-<%=vibe.id%>" value="<%=vibe.name%>">
@@ -12,6 +12,7 @@
               </label>
           </div>
         <% end %>
+        <%= link_to "Back", root_path, class: 'btn-ghost' %>
         <input type="submit" value="View Restaurants" class= 'btn-ghost justify-content-md-end'>
       </div>
     </form>
