@@ -6,8 +6,6 @@ Photo.destroy_all
 Vibe.destroy_all
 Restaurant.destroy_all
 
-
-
 # SETTING UP SCENIC VIBE
 
 puts "Planting panoramic scenic restaurant seeds"
@@ -177,7 +175,7 @@ cozy_results.each do |result|
 
   RestaurantVibe.create(
     vibe_id: cozy_vibe[:id],
-    restaurant_id: cozy_restaurant[:id]
+    restaurant_id: melodic_restaurant[:id]
   )
 end
 

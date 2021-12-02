@@ -70,5 +70,9 @@ gem 'cloudinary', '~> 1.16.0'
 
 #Geocoding
 gem 'geocoder'
-gem 'faker'
 
+# Search API
+gem 'google_search_results'
+
+# Faker
+gem 'faker'
