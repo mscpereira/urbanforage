@@ -5,4 +5,5 @@ class Review < ApplicationRecord
   validates :rating, presence: { message: 'cannot be blank' }
   validates :rating, numericality: { only_integer: true, message: 'should be a number' }
   validates :description, presence: true
+  validates :description, length: { in: 10..200 }
 end
