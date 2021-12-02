@@ -27,7 +27,7 @@
 
 .container-header {
   width: 100%;
-  margin-bottom: 270px;
+  margin-bottom: 300px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -42,6 +42,22 @@
   }
   button:hover {
     transform: translate(-1px, -2px);
+    #login-link, #logout-link {
+    color: $gray;
+    text-decoration: none;
+    }
+    #signup-link{
+      color:$white;
+      text-decoration: none;
+    }
+  }
+
+  button #signup-link:hover {
+    color: $white;
+  }
+  a {
+    font-size: 20px;
+    color: $white;
   }
 }
 
@@ -63,6 +79,14 @@
   .btn:hover {
     box-shadow: 2px 2px 2px rgba($color: $gray, $alpha: 0.6);
     transform: translate(-1px, -2px);
+    a {
+    color: $gray;
+    text-decoration: none;
+    }
+  }
+  .btn a {
+    font-size: 20px;
+    color: $white
   }
 }
 .notice {
@@ -78,12 +102,12 @@
   z-index: 1;
 }
 
-@media (min-width: 740px) {
+@media (max-width: 960px) {
   .container-home {
     width: 100%;
   }
-  .container-header button {
-    // width: 150px!important;
+  .container-header{
+    margin-bottom: 220px;
   }
   .container-login{
     margin-left: 20px;
@@ -111,6 +135,7 @@
   .container-header {
     width: 100%;
     display: grid;
+    margin-bottom: 200px;
     button {
       // width: 100px!important;
       margin-left: 100px;
@@ -173,4 +198,8 @@
       margin-top: 20px;
     }
   }
+}
+
+#welcome-msg {
+  font-weight: lighter;
 }

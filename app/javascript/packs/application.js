@@ -23,6 +23,7 @@ import "bootstrap";
 
 // Internal imports, e.g:
 import { selectcards } from '../pluggin/vibes_index_controller';
+import { showNav, hidewNav, show } from '../plugins/navbar';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
