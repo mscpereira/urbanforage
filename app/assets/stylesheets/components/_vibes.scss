@@ -34,36 +34,14 @@
   cursor: pointer;
 }
 
-// .cards-vibe-checked {
-//    position: absolute;
-//    content: '';
-//    width: 80%;
-//    height: 220%;
-//    background: rgba(48,101,94,0.7);
-//    top: -50%;
-//    left: -100%;
-//    z-index: 1;
-//    transform: rotate(25deg);
-  //  transform-origin: center top 0;
-  //  transition: .5s;
-// }
+.my-class:checked + label .cards-vibe::before {
+  left: 10%;
+}
 
-   .my-class:checked + label {
-    box-shadow: 13px 10px 30px 7px rgba(35,53,49,1);
-    // position: absolute;
-    // content: '';
-    border-radius: 15px;
-    border: 2px solid rgba(35,53,49,1);
-    // width: 80%;
-    // height: 220%;
-    // background: rgba(48,101,94,0.7);
-    //  top: 25%;
-    // left: 50%;
-    // z-index: 1;
-    // transform: rotate(5deg);
-    //  transform-origin: center top 0;
-    //  transition: .5s;
-   }
+.my-class:checked + label .cards-info {
+  top: 50%;
+}
+
 
 .cards-vibe:before {
   position: absolute;
