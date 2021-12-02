@@ -3,8 +3,8 @@ class RestaurantsController < ApplicationController
 
   def index
     if params.keys.count == 2
-      @restaurants = Restaurant.all
-    # for each vibe if vibe-id true
+      flash[:alert] = "You need to select at least one vibe!"
+      redirect_to :vibes
     else
       @restaurants = []
       params.each_key do |key|
@@ -12,8 +12,8 @@ class RestaurantsController < ApplicationController
           vibe = Vibe.find_by_name(params[key])
           @restaurants += vibe.restaurants
         end
+        @restaurants.uniq!
       end
-      @restaurants.uniq!
     end
   end
 

@@ -19,13 +19,16 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <%= render 'shared/flashes' %>
+
+    <%# <p class="notice"><%= notice %></p>
+    <%# <p class="alert"><%= alert %></p>
 
     <% if action_name == "home" %>
     <%= yield %>
     <% else %>
     <%= render 'shared/navbar' %>
+
     <%= yield %>
     <%= render 'shared/footer' %>
     <% end %>
