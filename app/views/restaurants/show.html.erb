@@ -41,7 +41,7 @@
 
     <%= link_to "Directions", @restaurant.website, class: "btn btn btn-success mt-3", target: "_blank" %>
     <%= link_to "Book", @restaurant.website, class: "btn btn btn-success mt-3", target: "_blank" %>
-    <button id="review" type="button" class="btn btn btn-success mt-3" data-toggle="modal" data-target="#exampleModal">Add a review</button>
+    <button type="button" class="btn btn btn-success mt-3" data-toggle="modal" data-target="#exampleModal">Add a review</button>
 
     <%= render 'restaurants/modal_new', restaurant: @restaurant, review: @review %>
   </div>

@@ -7,9 +7,6 @@ export default class extends Controller {
     position: String
   }
 
-  connect() {
-  }
-
   send(event) {
     event.preventDefault();
 

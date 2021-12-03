@@ -14,7 +14,7 @@ class ReviewsController < ApplicationController
 
     respond_to do |format|
       if @review.save
-        format.html { redirect_to restaurant_path(@restaurant, anchor: "review")}
+        format.html { redirect_to restaurant_path(@restaurant, anchor: "review-#{@review.id}") }
       else
         format.html { render 'restaurants/show' }
       end
