@@ -39,58 +39,58 @@
   }
 }
 
-.container-login {
-  button {
-    transition: all .4s ease-out;
-  }
-  button:hover {
-    transform: translate(-1px, -2px);
-    #login-link, #logout-link {
-    color: $gray;
-    text-decoration: none;
-    }
-    #signup-link{
-      color:$white;
-      text-decoration: none;
-    }
-  }
+// .container-login {
+//   button {
+//     transition: all .4s ease-out;
+//   }
+//   button:hover {
+//     transform: translate(-1px, -2px);
+//     #login-link, #logout-link {
+//     color: $gray;
+//     text-decoration: none;
+//     }
+//     #signup-link{
+//       color:$white;
+//       text-decoration: none;
+//     }
+//   }
 
-  button #signup-link:hover {
-    color: $white;
-  }
-  a {
-    font-size: 20px;
-    color: $white;
-  }
-}
+//   button #signup-link:hover {
+//     color: $white;
+//   }
+//   a {
+//     font-size: 20px;
+//     color: $white;
+//   }
+// }
 
 .container-info {
   margin-left: 30px;
   max-width: 950px;
   h1 {
-    font-size: 68px;
-    letter-spacing: 0.5px;
+    // font-size: 68px;
+    // letter-spacing: 0.5px;
     color: $white;
-    text-shadow: 1px 1px 1px rgba($color: $gray, $alpha: 0.3);
+    // text-shadow: 1px 1px 1px rgba($color: $gray, $alpha: 0.3);
   }
-  .btn {
-    margin-top: 30px;
-    text-shadow: 1px 1px 1px rgba($color: $gray, $alpha: 0.3);
-    box-shadow: 2px 2px 1px rgba($color: $gray, $alpha: 0.6);
-    transition: all .4s ease-out;
-  }
-  .btn:hover {
-    box-shadow: 2px 2px 2px rgba($color: $gray, $alpha: 0.6);
-    transform: translate(-1px, -2px);
-    a {
-    color: $gray;
-    text-decoration: none;
-    }
-  }
-  .btn a {
-    font-size: 20px;
-    color: $white
-  }
+  // .btn {
+  //   margin-top: 30px;
+  //   text-shadow: 1px 1px 1px rgba($color: $gray, $alpha: 0.3);
+  //   box-shadow: 2px 2px 1px rgba($color: $gray, $alpha: 0.6);
+  //   transition: all .4s ease-out;
+  // }
+  // .btn:hover {
+  //   box-shadow: 2px 2px 2px rgba($color: $gray, $alpha: 0.6);
+  //   transform: translate(-1px, -2px);
+  //   a {
+  //   color: $gray;
+  //   text-decoration: none;
+  //   }
+  // }
+  // .btn a {
+  //   font-size: 20px;
+  //   color: $white
+  // }
 }
 .notice {
   margin: 0;
