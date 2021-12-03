@@ -232,9 +232,9 @@ p {
 
 .restaurant-map {
   height: 99vh;
-  background-color: $green;
+  // background-color: $green;
   position: -webkit-sticky; /* Safari */
-  position: sticky;
+  position: sticky!important;
   top: 0;
   border-radius: 10px;
 }

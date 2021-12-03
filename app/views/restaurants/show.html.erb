@@ -1,6 +1,6 @@
 <div class="container">
 
-  <%= link_to "Back", restaurants_path, class: "btn btn btn-success mt-3" %>
+  <%= link_to "Back", restaurants_path, class: "btn btn-outline-primary mt-3" %>
 
   <div class="show-gallery">
     <div class="row p-3">
@@ -30,7 +30,7 @@
   <div data-controller="insert-in-list" data-insert-in-list-position-value="beforeend" class="show-reviews m-3">
     <div data-insert-in-list-target="items" class="review">
       <% if @restaurant.reviews.blank? %>
-        <p><small>"Be the first to leave a review for <%= @restaurant.name %>"...</small></p>
+        <p><small>"Be the first to leave a review for <%= @restaurant.name %></small></p>
       <% else %>
         <% @restaurant.reviews.last(4).each do |review| %>
           <%= render 'restaurants/review', review: review %>
@@ -39,9 +39,9 @@
       <% end %>
     </div>
 
-    <%= link_to "Directions", @restaurant.website, class: "btn btn btn-success mt-3", target: "_blank" %>
-    <%= link_to "Book", @restaurant.website, class: "btn btn btn-success mt-3", target: "_blank" %>
-    <button type="button" class="btn btn btn-success mt-3" data-toggle="modal" data-target="#exampleModal">Add a review</button>
+    <%= link_to "Directions", @restaurant.website, class: "btn btn-primary mt-3", target: "_blank" %>
+    <%= link_to "Book", @restaurant.website, class: "btn btn-primary mt-3", target: "_blank" %>
+    <button type="button" class="btn btn-outline-primary mt-3" data-toggle="modal" data-target="#exampleModal">Add a review</button>
 
     <%= render 'restaurants/modal_new', restaurant: @restaurant, review: @review %>
   </div>
