@@ -45,8 +45,12 @@
             </div>
         <% end %>
     </div>
-    <div class="restaurant-map my-3 w-100">
-
+    <div id="map" class="restaurant-map w-100 mt-3"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
+    <%# <div class="restaurant-map my-3 w-100">
+
+    </div> %>
   </div>
 </div>

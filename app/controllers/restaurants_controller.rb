@@ -14,6 +14,12 @@ class RestaurantsController < ApplicationController
         end
         @restaurants.uniq!
       end
+      @markers = @restaurants.map do |restaurant|
+         {
+          lat: restaurant.latitude,
+          lng: restaurant.longitude
+        }
+      end
     end
   end
 
