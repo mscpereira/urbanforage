@@ -1,6 +1,10 @@
-import mapboxgl from 'mapbox-gl';
-import 'mapbox-gl/dist/mapbox-gl.css';
+import mapboxgl from 'mapbox-gl/dist/mapbox-gl-csp';
+import MapboxWorker from 'worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker';
 
+mapboxgl.workerClass = MapboxWorker;
+
+// import mapboxgl from 'mapbox-gl';
+import 'mapbox-gl/dist/mapbox-gl.css';
 
 const buildMap = (mapElement, marker) => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
