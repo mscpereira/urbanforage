@@ -1,6 +1,6 @@
 <div class="container">
 
-  <%= link_to "Back", restaurants_path, class: "btn btn btn-success mt-3" %>
+  <%= link_to "Back", :back, class: "btn btn btn-success mt-3" %>
 
   <div class="show-gallery">
     <div class="row p-3">
@@ -30,7 +30,7 @@
   <div data-controller="insert-in-list" data-insert-in-list-position-value="beforeend" class="show-reviews m-3">
     <div data-insert-in-list-target="items" class="review">
       <% if @restaurant.reviews.blank? %>
-        <p><small>"Be the first to leave a review for <%= @restaurant.name %>"...</small></p>
+        <p>"Be the first to leave a <strong>review</strong> for <%= @restaurant.name %>..."</p>
       <% else %>
         <% @restaurant.reviews.last(4).each do |review| %>
           <%= render 'restaurants/review', review: review %>
@@ -41,7 +41,11 @@
 
     <%= link_to "Directions", @restaurant.website, class: "btn btn btn-success mt-3", target: "_blank" %>
     <%= link_to "Book", @restaurant.website, class: "btn btn btn-success mt-3", target: "_blank" %>
-    <button type="button" class="btn btn btn-success mt-3" data-toggle="modal" data-target="#exampleModal">Add a review</button>
+    <% if user_signed_in? %>
+      <button type="button" class="btn btn btn-success mt-3" data-toggle="modal" data-target="#exampleModal">Add a review</button>
+    <% else %>
+      <p class="review-login">Please login or create a new account to add a review.</p>
+    <% end %>
 
     <%= render 'restaurants/modal_new', restaurant: @restaurant, review: @review %>
   </div>
