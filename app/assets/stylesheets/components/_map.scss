@@ -6,7 +6,10 @@
   text-align: center;
   font-family: 'Work Sans', sans-serif;
   font-weight: bold;
-  width: 150px;
+  width: 300px;
   border-radius: 8px !important;
   background-color: $white !important;
+  a {
+    text-decoration: none!important;
+  }
 }
