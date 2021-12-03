@@ -2,6 +2,7 @@
 
   <%= link_to "Back", :back, class: "btn btn btn-success mt-3" %>
 
+
   <div class="show-gallery">
     <div class="row p-3">
       <% @restaurant.photos do |photo| %>
@@ -30,7 +31,7 @@
   <div data-controller="insert-in-list" data-insert-in-list-position-value="beforeend" class="show-reviews m-3">
     <div data-insert-in-list-target="items" class="review">
       <% if @restaurant.reviews.blank? %>
-        <p>"Be the first to leave a <strong>review</strong> for <%= @restaurant.name %>..."</p>
+        <p><small>"Be the first to leave a review for <%= @restaurant.name %></small></p>
       <% else %>
         <% @restaurant.reviews.last(4).each do |review| %>
           <%= render 'restaurants/review', review: review %>

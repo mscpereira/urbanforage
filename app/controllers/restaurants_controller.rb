@@ -10,12 +10,21 @@ class RestaurantsController < ApplicationController
       redirect_to :vibes
     else
       @restaurants = []
+      @vibes = []
       params.each_key do |key|
         if key.match(/vibe-\d+/)
           vibe = Vibe.find_by_name(params[key])
+          @vibes << vibe.name
           @restaurants += vibe.restaurants
         end
         @restaurants.uniq!
+      end
+      @markers = @restaurants.map do |restaurant|
+         {
+          lat: restaurant.latitude,
+          lng: restaurant.longitude,
+          info_window: render_to_string(partial: "info_window", locals: { restaurant: restaurant })
+        }
       end
     end
   end

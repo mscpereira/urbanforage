@@ -28,7 +28,7 @@ $border-radius-sm: 2px;
 // fonts
 
 h1 {
-  font-size: 68px;
+  font-size: 68px!important;
   font-weight: 700;
   line-height: 67px;
 }
@@ -57,33 +57,32 @@ p {
 .btn-primary {
   border: 2px solid #233531;
   box-sizing: border-box;
-  height: 52.84918212890625px;
-  width: 200px;
   border-radius: 50px!important;
+  padding: 10px;
 }
 
 .btn-outline-primary {
   border: 2px solid #233531;
   box-sizing: border-box;
-  height: 52.84918212890625px;
-  width: 200px;
   border-radius: 50px!important;
+  padding: 10px;
+  &:hover{
+    color: $white;
+  }
 }
 
 .btn-light {
   border: 2px solid $white;
   box-sizing: border-box;
-  height: 52.84918212890625px;
-  width: 200px;
   border-radius: 50px!important;
+  padding: 10px;
 }
 
 .btn-outline-light {
   border: 2px solid $white;
   box-sizing: border-box;
-  height: 52.84918212890625px;
-  width: 200px;
   border-radius: 50px!important;
+  padding: 10px;
 }
 
 .btn-secondary {
@@ -233,9 +232,9 @@ p {
 
 .restaurant-map {
   height: 99vh;
-  background-color: $green;
+  // background-color: $green;
   position: -webkit-sticky; /* Safari */
-  position: sticky;
+  position: sticky!important;
   top: 0;
   border-radius: 10px;
 }
@@ -247,6 +246,7 @@ p {
     text-align: center;
   }
 }
+
 .crossRotate:active {
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);

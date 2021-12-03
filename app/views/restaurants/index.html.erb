@@ -1,13 +1,13 @@
 <div class="container p-4">
   <div class="restaurant-index-top d-flex justify-content-between">
-    <h3><%= @restaurants.count %> restaurants found</h3>
+    <h3><%= @restaurants.count %> <%= @vibes.join(", ") %> restaurants found</h3>
     <div class="view-toggle">
       <div class="btn-group btn-group-toggle" data-toggle="buttons">
         <label class="btn btn-secondary active d-flex">
-          <input type="radio" name="options" id="option1" autocomplete="off" checked> <i class="ph-list align-items-center"></i>
+          <input type="radio" name="options" id="list" autocomplete="off" checked> <i class="ph-list align-items-center"></i>
         </label>
         <label class="btn btn-secondary d-flex">
-          <input type="radio" name="options" id="option2" autocomplete="off"> <i class="ph-map-pin align-items-center"></i>
+          <input type="radio" name="options" id="map-view" autocomplete="off"> <i class="ph-map-pin align-items-center"></i>
         </label>
       </div>
     </div>
@@ -45,8 +45,12 @@
             </div>
         <% end %>
     </div>
-    <div class="restaurant-map my-3 w-100">
-
+    <div id="map" class="restaurant-map w-100 mt-3"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
+    <%# <div class="restaurant-map my-3 w-100">
+
+    </div> %>
   </div>
 </div>
