@@ -19,6 +19,10 @@ class RestaurantsController < ApplicationController
         end
         @restaurants.uniq!
       end
+      if params[:query].present?
+        @restaurants = Restaurant.search_by_name(params[:query])
+      end
+
       @markers = @restaurants.map do |restaurant|
          {
           lat: restaurant.latitude,
