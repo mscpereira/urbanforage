@@ -30,6 +30,7 @@ document.addEventListener('turbolinks:load', () => {
   initMapboxShow();
 })
 
+
 // $(".crossRotate").click(function () {
 //   if ($(this).css("transform") == 'none') {
 //     $(this).css("transform", "rotate(45deg)");

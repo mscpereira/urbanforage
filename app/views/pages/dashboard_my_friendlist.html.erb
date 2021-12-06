@@ -1,0 +1,22 @@
+
+<h1> All friends </h1>
+ <% @friends.each do |friend| %>
+  <p> <%= friend.first_name.capitalize %> <%= friend.last_name.capitalize %> </p>
+<% end %>
+
+<h1> Pending sent invitations </h1>
+<% @pending_sent_invitations.each do |invitation| %>
+  <p> <%= invitation.friend.first_name.capitalize %> <%= invitation.friend.last_name.capitalize %> </p>
+<% end %>
+
+<h1> All sent invitations (confirmed and not confirmed - History) </h1>
+ <% @all_sent_invitations.each do |invitation| %>
+  <p> <%= invitation.friend.first_name.capitalize %> <%= invitation.friend.last_name.capitalize %> </p>
+<% end %>
+
+<h1> Pending received invitations </h1>
+ <% @pending_received_invitations.each do |invitation| %>
+  <p> <%= invitation.user.first_name.capitalize %> <%= invitation.user.last_name.capitalize %> </p>
+  <%= link_to 'Accept invitation?', confirm_invitation_path(invitation), method: :patch %>
+  <%= link_to 'Decline invitation?', reject_invitation_path(invitation), method: :patch %>
+<% end %>
