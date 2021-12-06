@@ -12,4 +12,9 @@ class Restaurant < ApplicationRecord
     using: {
       tsearch: { prefix: true }
     }
+  # include AlgoliaSearch
+
+  # algoliasearch do
+  #   attributes :name
+  # end
 end
