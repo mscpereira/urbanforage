@@ -1,12 +1,12 @@
 <div class="container p-4">
   <div class="restaurant-index-top d-flex justify-content-between">
     <h3><%= @restaurants.count %> <%= @vibes.join(", ") %> restaurants found</h3>
-    <div class="view-toggle">
+    <div class="view-toggle ml-auto p-2">
       <div class="btn-group btn-group-toggle" data-toggle="buttons">
-        <label class="btn btn-secondary active d-flex">
+        <label class="btn btn-secondary active d-flex" onclick="listView()">
           <input type="radio" name="options" id="list" autocomplete="off" checked> <i class="ph-list align-items-center"></i>
         </label>
-        <label class="btn btn-secondary d-flex">
+        <label class="btn btn-secondary d-flex" onclick="mapView()">
           <input type="radio" name="options" id="map-view" autocomplete="off"> <i class="ph-map-pin align-items-center"></i>
         </label>
       </div>
@@ -18,9 +18,9 @@
         <%= submit_tag "Search", class: "btn btn-primary" %>
       <%end%>
     <div class="restaurant-index d-flex justify-content-between">
-    <div class="restaurant-list w-100 mr-3">
+    <div class="restaurant-list w-100 mr-3" id="restaurant-list-view">
         <% @restaurants.each do |restaurant| %>
-           <div class="card my-3">
+           <div class="card my-3" id="restaurant-card-<%= restaurant.id %>">
               <%= link_to restaurant_path(restaurant), class:"text-decoration-none" do %>
                 <%= image_tag restaurant.image, class:"card-img-top" %>
               <% end %>
@@ -59,3 +59,32 @@
     </div> %>
   </div>
 </div>
+
+<script>
+
+  // toggle map/list view on mobile
+
+  function listView() {
+    document.getElementById('restaurant-list-view').style.display = "";
+    document.getElementById('map').style.display = 'none';
+  }
+  function mapView() {
+    document.getElementById('map').style.display = "";
+    document.getElementById('restaurant-list-view').style.display = 'none';
+  }
+
+  // show map marker when hovering card
+  // let restaurantCard = document.getElementById("restaurant-card");
+
+  // restaurantCard.addEventListener("mouseenter", function( event ) {
+  //   event.target
+  // })
+
+</script>
+
+<%= javascript_tag do %>
+  let testing = <% @restaurants.each do |restaurant|%>
+  <%= restaurant.name %>
+  <% end %>
+  console.log(testing)
+<% end %>

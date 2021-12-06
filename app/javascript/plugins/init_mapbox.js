@@ -12,6 +12,7 @@ const buildMap = (mapElement) => {
     container: 'map',
     // style: 'mapbox://styles/araujopaulo/ckweycuwa3foy15su18576pk9',
     style: 'mapbox://styles/mapbox/streets-v10',
+    center: [-9.1393, 38.7223],
     zoom: 13
   });
 };
@@ -21,7 +22,7 @@ const addMarkersToMap = (map, markers) => {
     const popup = new mapboxgl.Popup().setHTML(marker.info_window);
     const element = document.createElement('div');
     element.className = 'marker';
-    //element.style.backgroundImage = `url('${marker.image_url}')`;
+    // element.style.backgroundImage = `url('UF-favicon.png.image_url')`;
     element.style.backgroundSize = 'cover';
     element.style.width = '18px';
     element.style.height = '30px';
