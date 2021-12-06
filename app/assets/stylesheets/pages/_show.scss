@@ -5,3 +5,51 @@
   color: $green;
   padding-top: 10px;
 }
+
+h1 {
+  padding-bottom: 15px;
+}
+
+.show-restaurant{
+  p {
+  padding-bottom: 15px;
+  }
+}
+
+
+.show-card {
+  padding: 0px 0px 15px;
+  justify-content: center;
+}
+
+.show-card img {
+  border-radius: 8px;
+}
+
+.show-flex {
+  justify-content: space-between;
+  padding: 15px;
+}
+.show-thumbnails {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.review {
+  p {
+    text-align: center;
+  }
+}
+
+.show-reviews {
+  align-items: center;
+  justify-content: space-around;
+}
+
+
+.show-buttons {
+  justify-content: space-between;
+  display: flex;
+}
