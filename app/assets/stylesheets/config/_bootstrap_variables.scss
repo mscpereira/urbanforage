@@ -106,6 +106,7 @@ p {
     border-color: $green!important;
 }
 
+
 // mobile
 
 // mobile fonts
@@ -113,15 +114,22 @@ p {
 @media (min-width: 1024px) {
   .view-toggle {
     visibility: hidden;
+    width: 50%!important;
   }
 }
 
 @media (max-width: 1024px) {
-  .restaurant-map {
-    visibility: hidden;
-  }
   .restaurant-index {
     flex-direction: column;
+  }
+}
+
+@media (max-width: 570px) {
+  .restaurant-index-top {
+    flex-direction: column;
+  }
+  .restaurant-map {
+    height: 500px!important;
   }
 }
 
@@ -188,7 +196,7 @@ p {
 // selected text color
 
 ::selection {
-  background: rgba(90, 158, 101, 0.8);
+  background: rgba(131, 105, 105, 0.8);
   color: $white; /* WebKit/Blink Browsers */
 }
 

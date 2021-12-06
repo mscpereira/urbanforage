@@ -14,6 +14,7 @@ const buildMap = (mapElement, marker) => {
     // style: 'mapbox://styles/araujopaulo/ckweycuwa3foy15su18576pk9',
     style: 'mapbox://styles/mapbox/streets-v10',
     center: marker,
+    center: [-9.1393, 38.7223],
     zoom: 12
   });
 };
