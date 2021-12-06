@@ -12,6 +12,11 @@
       </div>
     </div>
   </div>
+      <%= link_to "Back", restaurants_path, class:"btn btn-outline-primary mb-3" %>
+      <%= form_tag restaurants_path, method: :get, class: 'form-inline' do%>
+        <%= text_field_tag :query, params[:query], class: "form-control-lg", id:"search_category", placeholder: "Look for a restaurant" %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+      <%end%>
     <div class="restaurant-index d-flex justify-content-between">
     <div class="restaurant-list w-100 mr-3">
         <% @restaurants.each do |restaurant| %>
