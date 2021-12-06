@@ -125,9 +125,6 @@ p {
 }
 
 @media (max-width: 570px) {
-  .restaurant-index-top {
-    flex-direction: column;
-  }
   .restaurant-map {
     height: 500px!important;
   }
@@ -196,7 +193,7 @@ p {
 // selected text color
 
 ::selection {
-  background: rgba(131, 105, 105, 0.8);
+  background: rgba(36, 53, 49, 0.9);
   color: $white; /* WebKit/Blink Browsers */
 }
 
@@ -272,4 +269,10 @@ p {
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
+}
+
+.form-control-lg {
+  border-radius: 10px;
+  border: 1px solid $gray;
+  background-color: $white;
 }

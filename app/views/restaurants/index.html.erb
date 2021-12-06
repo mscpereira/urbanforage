@@ -1,6 +1,6 @@
 <div class="container p-4">
   <div class="restaurant-index-top d-flex justify-content-between">
-    <h3><%= @restaurants.count %> <%= @vibes.join(", ") %> restaurants found</h3>
+    <%= link_to "Back", restaurants_path, class:"btn btn-outline-primary mb-3" %>
     <div class="view-toggle ml-auto p-2">
       <div class="btn-group btn-group-toggle" data-toggle="buttons">
         <label class="btn btn-secondary active d-flex" onclick="listView()">
@@ -12,11 +12,15 @@
       </div>
     </div>
   </div>
-      <%= link_to "Back", restaurants_path, class:"btn btn-outline-primary mb-3" %>
+  <div class="restaurant-index-search d-flex justify-content-between">
+    <h2 class="py-3"><%= @restaurants.count %> <%= @vibes.join(", ") %> restaurants found</h2>
+    <div class="restaurant-search">
       <%= form_tag restaurants_path, method: :get, class: 'form-inline' do%>
-        <%= text_field_tag :query, params[:query], class: "form-control-lg", id:"search_category", placeholder: "Look for a restaurant" %>
+        <%= text_field_tag :query, params[:query], class: "form-control-lg mr-3 p-4", id:"search_category", placeholder: "Look for a restaurant" %>
         <%= submit_tag "Search", class: "btn btn-primary" %>
-      <%end%>
+      <% end %>
+    </div>
+  </div>
     <div class="restaurant-index d-flex justify-content-between">
     <div class="restaurant-list w-100 mr-3" id="restaurant-list-view">
         <% @restaurants.each do |restaurant| %>
