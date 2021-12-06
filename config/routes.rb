@@ -10,4 +10,9 @@ Rails.application.routes.draw do
     resources :restaurant_collections, only: %i[create destroy]
   end
   resources :vibes, only: %i[index]
+
+  get "dashboard/friendlist", to: "pages#dashboard_my_friendlist"
+  patch "confirm_invitation/:id", to: "invitations#confirm", as: "confirm_invitation"
+  patch "reject_invitation/:id", to: "invitations#reject", as: "reject_invitation"
+
 end

@@ -32,6 +32,7 @@ document.addEventListener('turbolinks:load', () => {
   // initAutocomplete();
 })
 
+
 // $(".crossRotate").click(function () {
 //   if ($(this).css("transform") == 'none') {
 //     $(this).css("transform", "rotate(45deg)");

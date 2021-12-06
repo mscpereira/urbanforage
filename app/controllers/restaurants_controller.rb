@@ -24,6 +24,7 @@ class RestaurantsController < ApplicationController
       end
 
       @markers = @restaurants.map do |restaurant|
+        {
           id: restaurant.id,
           lat: restaurant.latitude,
           lng: restaurant.longitude,
