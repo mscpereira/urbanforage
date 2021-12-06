@@ -22,7 +22,7 @@ const addMarkersToMap = (map, markers) => {
     const popup = new mapboxgl.Popup().setHTML(marker.info_window);
     const element = document.createElement('div');
     element.className = 'marker';
-    element.style.backgroundImage = `url('UF-favicon.png.image_url')`;
+    // element.style.backgroundImage = `url('UF-favicon.png.image_url')`;
     element.style.backgroundSize = 'cover';
     element.style.width = '18px';
     element.style.height = '30px';

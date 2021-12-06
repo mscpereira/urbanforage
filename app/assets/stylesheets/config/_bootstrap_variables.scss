@@ -256,6 +256,10 @@ p {
   border-radius: 10px;
 }
 
+#restaurant-card:hover + .marker {
+  display: display;
+}
+
 .view-toggle {
   i {
     font-size: 1.3rem;
