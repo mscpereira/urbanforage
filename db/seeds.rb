@@ -33,6 +33,8 @@ scenic_results.each do |result|
   scenic_photo_search = GoogleSearch.new(scenic_photo_params)
   scenic_photos = scenic_photo_search.get_hash[:photos]
 
+
+
   scenic_restaurant = Restaurant.create(
   name: result[:title],
   cuisine: result[:type],
@@ -44,7 +46,8 @@ scenic_results.each do |result|
   latitude: result[:gps_coordinates][:latitude],
   longitude: result[:gps_coordinates][:longitude],
   image: scenic_photos[0][:image],
-  description: result[:description]
+  description: result[:description],
+  directions: "https://www.google.com/maps/search/?api=1&query=#{result[:gps_coordinates][:latitude]}%2C#{result[:gps_coordinates][:longitude]}&query_place_id=#{result[:place_id]}"
   )
 
   scenic_photos_array = []
@@ -104,7 +107,8 @@ melodic_results.each do |result|
   latitude: result[:gps_coordinates][:latitude],
   longitude: result[:gps_coordinates][:longitude],
   image: melodic_photos[0][:image],
-  description: result[:description]
+  description: result[:description],
+  directions: "https://www.google.com/maps/search/?api=1&query=#{result[:gps_coordinates][:latitude]}%2C#{result[:gps_coordinates][:longitude]}&query_place_id=#{result[:place_id]}"
 )
 
   melodic_photos_array = []
@@ -161,7 +165,8 @@ cozy_results.each do |result|
   latitude: result[:gps_coordinates][:latitude],
   longitude: result[:gps_coordinates][:longitude],
   image: cozy_photos[0][:image],
-  description: result[:description]
+  description: result[:description],
+  directions: "https://www.google.com/maps/search/?api=1&query=#{result[:gps_coordinates][:latitude]}%2C#{result[:gps_coordinates][:longitude]}&query_place_id=#{result[:place_id]}"
 )
 
   cozy_photos_array = []
@@ -221,7 +226,8 @@ earthy_results.each do |result|
   latitude: result[:gps_coordinates][:latitude],
   longitude: result[:gps_coordinates][:longitude],
   image: earthy_photos[0][:image],
-  description: result[:description]
+  description: result[:description],
+  directions: "https://www.google.com/maps/search/?api=1&query=#{result[:gps_coordinates][:latitude]}%2C#{result[:gps_coordinates][:longitude]}&query_place_id=#{result[:place_id]}"
 )
 
   earthy_photos_array = []
@@ -279,7 +285,8 @@ minimalist_results.each do |result|
   latitude: result[:gps_coordinates][:latitude],
   longitude: result[:gps_coordinates][:longitude],
   image: minimalist_photos[0][:image],
-  description: result[:description]
+  description: result[:description],
+  directions: "https://www.google.com/maps/search/?api=1&query=#{result[:gps_coordinates][:latitude]}%2C#{result[:gps_coordinates][:longitude]}&query_place_id=#{result[:place_id]}"
 )
 
   minimalist_photos_array = []
@@ -336,7 +343,8 @@ alternative_results.each do |result|
   latitude: result[:gps_coordinates][:latitude],
   longitude: result[:gps_coordinates][:longitude],
   image: alternative_photos[0][:image],
-  description: result[:description]
+  description: result[:description],
+  directions: "https://www.google.com/maps/search/?api=1&query=#{result[:gps_coordinates][:latitude]}%2C#{result[:gps_coordinates][:longitude]}&query_place_id=#{result[:place_id]}"
 )
 
   alternative_photos_array = []

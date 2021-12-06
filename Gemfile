@@ -75,5 +75,8 @@ gem 'geocoder'
 # Search API
 gem 'google_search_results'
 
+gem 'pg_search', '~> 2.3.0'
+gem "algoliasearch-rails"
+
 # Faker
 gem 'faker'

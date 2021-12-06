@@ -1,4 +1,4 @@
-<div id="restaurant-location">
+<div id="restaurant-location-<%= restaurant.id %>">
   <%= link_to restaurant_path(restaurant) do %>
   <%= image_tag restaurant.image, class:'w-100' %>
   <h3> <%= restaurant.name %> </h3>

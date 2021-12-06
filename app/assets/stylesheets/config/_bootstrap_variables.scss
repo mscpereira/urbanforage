@@ -25,47 +25,56 @@ $border-radius-sm: 2px;
 
 // Override other variables below!
 
+// remove white bar on top of landing page
+* {
+  // margin: 0!important;
+}
+
 // fonts
 
 h1 {
-  font-size: 68px!important;
+  font-size: 4rem!important;
   font-weight: 700;
-  line-height: 67px;
+  line-height: 4rem!important;
 }
 
 h2 {
-  font-size: 48px;
-  line-height: 46px;
+  // font-size: 48px;
+  // line-height: 46px;
   font-weight: 400;
 }
 
 h3 {
-  font-size: 36px;
-  line-height: 35px;
+  // font-size: 36px;
+  // line-height: 35px;
   font-weight: 400;
 }
 
 p {
-  font-weight: 300;
-  font-size: 16px;
-  line-height: 20px;
+  font-weight: 400;
+  font-size: 1.1rem;
+  line-height: 1.3rem;
+  margin-bottom: 0!important;
 }
 
 
 // buttons
+.btn {
+  padding: 1rem 2rem!important;
+}
 
 .btn-primary {
   border: 2px solid #233531;
   box-sizing: border-box;
   border-radius: 50px!important;
-  padding: 10px;
+  // padding: 1.3rem;
 }
 
 .btn-outline-primary {
   border: 2px solid #233531;
   box-sizing: border-box;
   border-radius: 50px!important;
-  padding: 10px;
+  // padding: 1.3rem;
   &:hover{
     color: $white;
   }
@@ -75,14 +84,14 @@ p {
   border: 2px solid $white;
   box-sizing: border-box;
   border-radius: 50px!important;
-  padding: 10px;
+  // padding: 1.3rem;
 }
 
 .btn-outline-light {
   border: 2px solid $white;
   box-sizing: border-box;
   border-radius: 50px!important;
-  padding: 10px;
+  // padding: 1.3rem;
 }
 
 .btn-secondary {
@@ -97,6 +106,7 @@ p {
     border-color: $green!important;
 }
 
+
 // mobile
 
 // mobile fonts
@@ -104,15 +114,19 @@ p {
 @media (min-width: 1024px) {
   .view-toggle {
     visibility: hidden;
+    width: 50%!important;
   }
 }
 
 @media (max-width: 1024px) {
-  .restaurant-map {
-    visibility: hidden;
-  }
   .restaurant-index {
     flex-direction: column;
+  }
+}
+
+@media (max-width: 570px) {
+  .restaurant-map {
+    height: 500px!important;
   }
 }
 
@@ -179,7 +193,7 @@ p {
 // selected text color
 
 ::selection {
-  background: rgba(90, 158, 101, 0.8);
+  background: rgba(36, 53, 49, 0.9);
   color: $white; /* WebKit/Blink Browsers */
 }
 
@@ -239,6 +253,10 @@ p {
   border-radius: 10px;
 }
 
+#restaurant-card:hover + .marker {
+  display: display;
+}
+
 .view-toggle {
   i {
     font-size: 1.3rem;
@@ -251,4 +269,10 @@ p {
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
+}
+
+.form-control-lg {
+  border-radius: 10px;
+  border: 1px solid $gray;
+  background-color: $white;
 }
