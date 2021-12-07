@@ -1,55 +1,56 @@
 @import "home";
 
+h1 {
+  padding-bottom: 15px;
+}
+
+.carousel-img {
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+// .carousel-inn {
+//   box-shadow: 0px 0px 4px #e9e8e6;
+//   border-radius: 10px;
+// }
+
+.carousel-card {
+  box-shadow: 0px 0px 4px #e9e8e6;
+  border-radius: 10px;
+  margin-right: 0;
+}
+
+.row-show {
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.row-restaurant {
+  align-items: center;
+  padding: 0,
+}
+
+.row-reviews {
+    margin-top: 20px;
+  }
+
+.row-actions {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.row-map {
+  padding: 0;
+  border-radius: 10px;
+}
+
 .review-login {
   font-weight: 600;
   color: $green;
   padding-top: 10px;
 }
 
-h1 {
-  padding-bottom: 15px;
-}
-
-.show-restaurant{
-  p {
-  padding-bottom: 15px;
-  }
-}
-
-
-.show-card {
-  padding: 0px 0px 15px;
-  justify-content: center;
-}
-
-.show-card img {
-  border-radius: 8px;
-}
-
-.show-flex {
-  justify-content: space-between;
-  padding: 15px;
-}
-.show-thumbnails {
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  border-radius: 8px;
-}
-
-.review {
-  p {
-    text-align: center;
-  }
-}
-
-.show-reviews {
-  align-items: center;
-  justify-content: space-around;
-}
-
-
-.show-buttons {
-  justify-content: space-around;
-  display: flex;
+.buttons {
+  justify-content: space-evenly;
 }
