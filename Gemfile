@@ -6,6 +6,7 @@ ruby '2.7.4'
 gem 'pundit'
 gem 'turbolinks_render'
 gem 'devise'
+gem 'pagy', '~> 5.6'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
 # Use postgresql as the database for Active Record

@@ -1,0 +1,23 @@
+#table {
+  border-collapse: separate;
+  border-spacing:0 20px;
+  th {
+    height: 60px;
+    max-height: 80px;
+  }
+  td {
+    max-width: 500px;
+  }
+}
+
+.review-para {
+  max-height: 38px;
+  overflow: hidden;
+}
+.pagination {
+  margin-left: 20px
+}
+
+.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
+   background-color: rgba(255, 250, 240, 0.521)
+}
