@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :find_restaurant
+  before_action :find_restaurant, only: %i[create]
   # before_action :find_user
 
   # def new
@@ -7,7 +7,12 @@ class ReviewsController < ApplicationController
   #   # authorize @review
   # end
 
+  def index
+    @reviews = Review.all
+  end
+
   def create
+    @marker = session[:marker]
     @review = Review.new(review_params)
     @review.restaurant = @restaurant
     @review.user = current_user
@@ -15,11 +20,13 @@ class ReviewsController < ApplicationController
     respond_to do |format|
       if @review.save
         format.html { redirect_to restaurant_path(@restaurant, anchor: "review-#{@review.id}") }
+        format.json
       else
         format.html { render 'restaurants/show' }
+        format.json
       end
 
-      format.json
+
     end
   end
 

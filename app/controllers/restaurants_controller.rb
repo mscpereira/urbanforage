@@ -42,6 +42,7 @@ class RestaurantsController < ApplicationController
       lat: @restaurant.latitude,
       lng: @restaurant.longitude
     }
+    session[:marker] = @marker
   end
 
   private
