@@ -8,6 +8,7 @@ class ReviewsController < ApplicationController
   # end
 
   def create
+    @marker = session[:marker]
     @review = Review.new(review_params)
     @review.restaurant = @restaurant
     @review.user = current_user
@@ -15,11 +16,13 @@ class ReviewsController < ApplicationController
     respond_to do |format|
       if @review.save
         format.html { redirect_to restaurant_path(@restaurant, anchor: "review-#{@review.id}") }
+        format.json
       else
         format.html { render 'restaurants/show' }
+        format.json
       end
 
-      format.json
+
     end
   end
 

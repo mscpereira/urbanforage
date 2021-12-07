@@ -68,7 +68,7 @@
     <%= link_to "Directions", @restaurant.directions , class: "btn btn btn-success mt-3", target: "_blank" %>
     <%= link_to "Book", @restaurant.website, class: "btn btn btn-success mt-3", target: "_blank" %>
     <% if user_signed_in? %>
-      <button type="button" class="btn btn btn-success mt-3" data-toggle="modal" data-target="#exampleModal">Add a review</button>
+      <button type="button" class="btn btn btn-success mt-3" id="modal-button" data-toggle="modal" data-target="#exampleModal">Add a review</button>
       <% else %>
       <p class="review-login">Please login or create a new account to add a review.</p>
     <% end %>
