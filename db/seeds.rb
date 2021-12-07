@@ -33,7 +33,12 @@ scenic_results.each do |result|
   scenic_photo_search = GoogleSearch.new(scenic_photo_params)
   scenic_photos = scenic_photo_search.get_hash[:photos]
 
-
+  thumbnail = ""
+  if scenic_photos[0][:image].nil?
+    thumbnail = result[:thumbnail]
+  else
+    thumbnail = scenic_photos[0][:image]
+  end
 
   scenic_restaurant = Restaurant.create(
   name: result[:title],
@@ -45,10 +50,12 @@ scenic_results.each do |result|
   price_range: result[:price],
   latitude: result[:gps_coordinates][:latitude],
   longitude: result[:gps_coordinates][:longitude],
-  image: scenic_photos[0][:image],
+  image: thumbnail,
   description: result[:description],
   directions: "https://www.google.com/maps/search/?api=1&query=#{result[:gps_coordinates][:latitude]}%2C#{result[:gps_coordinates][:longitude]}&query_place_id=#{result[:place_id]}"
   )
+
+  # puts scenic_photos[0][:image]
 
   scenic_photos_array = []
   scenic_photos.first(8).each { |image| scenic_photos_array << image[:image] }
@@ -96,6 +103,13 @@ melodic_results.each do |result|
   melodic_photo_search = GoogleSearch.new(melodic_photo_params)
   melodic_photos = melodic_photo_search.get_hash[:photos]
 
+  thumbnail = ""
+  if melodic_photos[0][:image].nil?
+    thumbnail = result[:thumbnail]
+  else
+    thumbnail = melodic_photos[0][:image]
+  end
+
   melodic_restaurant = Restaurant.create!(
   name: result[:title],
   cuisine: result[:type],
@@ -106,7 +120,7 @@ melodic_results.each do |result|
   price_range: result[:price],
   latitude: result[:gps_coordinates][:latitude],
   longitude: result[:gps_coordinates][:longitude],
-  image: melodic_photos[0][:image],
+  image: thumbnail,
   description: result[:description],
   directions: "https://www.google.com/maps/search/?api=1&query=#{result[:gps_coordinates][:latitude]}%2C#{result[:gps_coordinates][:longitude]}&query_place_id=#{result[:place_id]}"
 )
@@ -154,6 +168,14 @@ cozy_results.each do |result|
   cozy_photo_search = GoogleSearch.new(cozy_photo_params)
   cozy_photos = cozy_photo_search.get_hash[:photos]
 
+
+  thumbnail = ""
+  if cozy_photos[0][:image].nil?
+    thumbnail = result[:thumbnail]
+  else
+    thumbnail = cozy_photos[0][:image]
+  end
+
   cozy_restaurant = Restaurant.create!(
   name: result[:title],
   cuisine: result[:type],
@@ -164,7 +186,7 @@ cozy_results.each do |result|
   price_range: result[:price],
   latitude: result[:gps_coordinates][:latitude],
   longitude: result[:gps_coordinates][:longitude],
-  image: cozy_photos[0][:image],
+  image: thumbnail,
   description: result[:description],
   directions: "https://www.google.com/maps/search/?api=1&query=#{result[:gps_coordinates][:latitude]}%2C#{result[:gps_coordinates][:longitude]}&query_place_id=#{result[:place_id]}"
 )
@@ -184,8 +206,6 @@ cozy_results.each do |result|
     restaurant_id: cozy_restaurant[:id]
   )
 end
-
-
 
 # GENERATING EARTHY VIBES
 
@@ -215,6 +235,13 @@ earthy_results.each do |result|
   earthy_photo_search = GoogleSearch.new(earthy_photo_params)
   earthy_photos = earthy_photo_search.get_hash[:photos]
 
+  thumbnail = ""
+  if earthy_photos[0][:image].nil?
+    thumbnail = result[:thumbnail]
+  else
+    thumbnail = earthy_photos[0][:image]
+  end
+
   earthy_restaurant = Restaurant.create!(
   name: result[:title],
   cuisine: result[:type],
@@ -225,7 +252,7 @@ earthy_results.each do |result|
   price_range: result[:price],
   latitude: result[:gps_coordinates][:latitude],
   longitude: result[:gps_coordinates][:longitude],
-  image: earthy_photos[0][:image],
+  image: thumbnail,
   description: result[:description],
   directions: "https://www.google.com/maps/search/?api=1&query=#{result[:gps_coordinates][:latitude]}%2C#{result[:gps_coordinates][:longitude]}&query_place_id=#{result[:place_id]}"
 )
@@ -274,6 +301,13 @@ minimalist_results.each do |result|
   minimalist_photo_search = GoogleSearch.new(minimalist_photo_params)
   minimalist_photos = minimalist_photo_search.get_hash[:photos]
 
+  thumbnail = ""
+  if minimalist_photos[0][:image].nil?
+    thumbnail = result[:thumbnail]
+  else
+    thumbnail = minimalist_photos[0][:image]
+  end
+
   minimalist_restaurant = Restaurant.create!(
   name: result[:title],
   cuisine: result[:type],
@@ -284,7 +318,7 @@ minimalist_results.each do |result|
   price_range: result[:price],
   latitude: result[:gps_coordinates][:latitude],
   longitude: result[:gps_coordinates][:longitude],
-  image: minimalist_photos[0][:image],
+  image: thumbnail,
   description: result[:description],
   directions: "https://www.google.com/maps/search/?api=1&query=#{result[:gps_coordinates][:latitude]}%2C#{result[:gps_coordinates][:longitude]}&query_place_id=#{result[:place_id]}"
 )
@@ -332,6 +366,13 @@ alternative_results.each do |result|
   alternative_photo_search = GoogleSearch.new(alternative_photo_params)
   alternative_photos = alternative_photo_search.get_hash[:photos]
 
+  thumbnail = ""
+  if alternative_photos[0][:image].nil?
+    thumbnail = result[:thumbnail]
+  else
+    thumbnail = alternative_photos[0][:image]
+  end
+
   alternative_restaurant = Restaurant.create!(
   name: result[:title],
   cuisine: result[:type],
@@ -342,7 +383,7 @@ alternative_results.each do |result|
   price_range: result[:price],
   latitude: result[:gps_coordinates][:latitude],
   longitude: result[:gps_coordinates][:longitude],
-  image: alternative_photos[0][:image],
+  image: thumbnail,
   description: result[:description],
   directions: "https://www.google.com/maps/search/?api=1&query=#{result[:gps_coordinates][:latitude]}%2C#{result[:gps_coordinates][:longitude]}&query_place_id=#{result[:place_id]}"
 )

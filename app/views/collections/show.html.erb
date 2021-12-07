@@ -1,0 +1,15 @@
+<div class="container my-3">
+  <%= link_to 'Back', collections_path, class:'btn btn-outline-primary my-3' %>
+  <h1> <%= @collection.name %> </h1>
+  <p> <%= @collection.description %> </p>
+ <ul class="">
+    <% @collection.restaurants.each do |restaurant| %>
+      <li>
+        <h2>
+          <%= restaurant.name %>
+        </h2>
+      </li>
+    <% end %>
+</ul>
+
+</div>

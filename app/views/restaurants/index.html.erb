@@ -33,27 +33,33 @@
                       <h3 class="card-title"><%= restaurant.name %></h3>
                       <p class="card-text"> <%= restaurant.description %> </p>
                     </div>
-                    <i class="ph-plus-circle p-3 crossRotate" data-action="click" data-toggle="collapse" href="#collapse<%= restaurant.id %>" role="button" aria-expanded="false" aria-controls="collapseExample"></i>
+                    <i class="ph-plus-circle p-3 rotate" data-action="click" id="add-icon" data-toggle="collapse" href="#collapse<%= restaurant.id %>" role="button" aria-expanded="false" aria-controls="collapseExample"></i>
                   </div>
                 </div>
               <div id="add-to">
                 <div class="collapse" id="collapse<%= restaurant.id %>">
                   <ul class="list-group list-group-flush">
-                    <li class="list-group-item d-flex justify-content-between align-items-end pt-5">
-                      <h4>Add to collection</h4>
-                      <button class='btn btn-outline-light'>New</button>
-                    </li>
-                    <li class="list-group-item">
-                      <p>Sunday brunch</p>
-                    </li>
-                    <li class="list-group-item">
-                      <p>Creative night out</p>
-                    </li>
+                    <li class="list-group-item disabled">
+                      <div class="add-to-top d-flex justify-content-between align-items-end pt-5">
+                        <h4>Add to collection</h4>
+                      </div>
+                      </li>
+                          <% @collections.each do |collection| %>
+                                <li class="list-group-item">
+                                   <%= link_to collection.name, collection_restaurant_collections_path(collection, restaurant: restaurant), method: :post %>
+                                </li>
+                          <% end %>
+                          <li class="list-group-item" id="new-collection-link">
+                            <%= link_to new_collection_path(id: restaurant.id) do %>
+                              Add to new collection
+                            <% end %>
+                          </li>
                   </ul>
                 </div>
             </div>
         <% end %>
     </div>
+
     <div id="map" class="restaurant-map w-100 mt-3"
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
@@ -76,7 +82,6 @@
     document.getElementById('map').style.display = "";
     document.getElementById('restaurant-list-view').style.display = 'none';
   }
-
   // show map marker when hovering card
   // let restaurantCard = document.getElementById("restaurant-card");
 
@@ -85,10 +90,3 @@
   // })
 
 </script>
-
-<%= javascript_tag do %>
-  let testing = <% @restaurants.each do |restaurant|%>
-  <%= restaurant.name %>
-  <% end %>
-  console.log(testing)
-<% end %>
