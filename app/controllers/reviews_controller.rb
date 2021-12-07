@@ -1,11 +1,15 @@
 class ReviewsController < ApplicationController
-  before_action :find_restaurant
+  before_action :find_restaurant, only: %i[create]
   # before_action :find_user
 
   # def new
   #   @review = Review.new
   #   # authorize @review
   # end
+
+  def index
+    @reviews = Review.all
+  end
 
   def create
     @marker = session[:marker]

@@ -1,4 +1,4 @@
-<p id="review-<%= review.id %>">
+<p id="review">
   <%= "<i class='fas fa-star' id='star'></i>".html_safe * review.rating %><%= "<i class='far fa-star' id='star'></i>".html_safe * (5 - review.rating) %>
   (<small><em><%= review.created_at.strftime("%d-%m-%Y")%></small></em>)
 </p>
