@@ -223,21 +223,46 @@ p {
 
   .list-group-item {
     background-color: $gray;
-    color: $white;
     position: relative;
     top: 10;
-    // font-family: 'Degular';
-    h4 {
-      font-weight: 300;
-      font-size: 24px;
+    color: $white;
+    &:hover {
+        background-color: $green;
+      }
+      h4 {
+        font-weight: 300;
+        font-size: 24px;
+        color: $white;
+      }
+      a {
+        text-decoration: none!important;
+        color: $white!important;
+        font-size: 18px;
+    }
+  }
+  .list-group-item.disabled {
+    background-color: $gray;
+    color: $white;
+  }
+  #new-collection-link {
+    background-color: $white;
+    border: 2px solid $gray;
+    a {
+      color: $gray!important;
+    }
+    &:hover {
+      background-color: $green!important;
+      a {
+        color: $white!important;
+      }
     }
   }
 }
 
+
 #add-to {
   position: relative;
   bottom: 50px;
-  // z-index: -1; REMOVED THIS
 }
 
 .restaurant-map {
@@ -288,11 +313,4 @@ p {
   }
   border: 2px solid $gray;
   border-radius: 10px;
-  &:hover {
-    // color: $white!important;
-    // background-color: $gray;
-    #action-icon {
-      // color: $white;
-    }
-  }
 }

@@ -39,14 +39,21 @@
               <div id="add-to">
                 <div class="collapse" id="collapse<%= restaurant.id %>">
                   <ul class="list-group list-group-flush">
-                    <li class="list-group-item d-flex justify-content-between align-items-end pt-5">
-                      <h4>Add to collection</h4>
-                      <%= link_to 'New', new_collection_path(id: restaurant.id), class:'btn btn-outline-light' %>
-
-                      <% @collections.each do |collection| %>
-                       <%= link_to collection.name, collection_restaurant_collections_path(collection, restaurant: restaurant), method: :post, class:'btn btn-primary' %>
-                      <% end %>
+                    <li class="list-group-item disabled">
+                      <div class="add-to-top d-flex justify-content-between align-items-end pt-5">
+                        <h4>Add to collection</h4>
+                      </div>
                       </li>
+                          <% @collections.each do |collection| %>
+                                <li class="list-group-item">
+                                   <%= link_to collection.name, collection_restaurant_collections_path(collection, restaurant: restaurant), method: :post %>
+                                </li>
+                          <% end %>
+                          <li class="list-group-item" id="new-collection-link">
+                            <%= link_to new_collection_path(id: restaurant.id) do %>
+                              Add to new collection
+                            <% end %>
+                          </li>
                   </ul>
                 </div>
             </div>
