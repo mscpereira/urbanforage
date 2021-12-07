@@ -12,13 +12,20 @@ class CollectionsController < ApplicationController
 
   def new
     @collection = Collection.new
+    if params[:id].present?
+      @restaurant_id = params[:id]
+    end
   end
 
   def create
     @collection = Collection.new(collection_params)
     @collection.user = current_user
     if @collection.save
-      redirect_to collections_path(@collection)
+      if params[:collection][:id].present?
+        @restaurant = Restaurant.find(params[:collection][:id])
+        RestaurantCollection.create(restaurant: @restaurant, collection: @collection)
+      end
+      redirect_to collections_path
     else
       render :new
     end

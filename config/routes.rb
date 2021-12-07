@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :restaurant_vibes, only: %i[create destroy]
   end
   resources :collections do
-    resources :restaurant_collections, only: %i[create destroy]
+    resources :restaurant_collections, only: :create
   end
   resources :vibes, only: %i[index]
 
