@@ -45,7 +45,7 @@ const initMapboxShow = () => {
   const mapElement = document.getElementById('map-show');
 
   if (mapElement) {
-    const marker = JSON.parse(mapElement.dataset.markers);
+    const marker = JSON.parse(mapElement.dataset.marker);
     const map = buildMap(mapElement, marker);
     addMarkersToMap(map, marker);
     fitMapToMarker(map, marker);

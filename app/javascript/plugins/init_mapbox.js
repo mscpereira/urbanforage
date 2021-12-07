@@ -47,8 +47,18 @@ const initMapbox = () => {
   const mapElement = document.getElementById('map');
 
   if (mapElement) {
-    const map = buildMap(mapElement);
+
     const markers = JSON.parse(mapElement.dataset.markers);
+    let chapters = {}
+    markers.forEach(marker =>
+      chapters[`restaurant-card-${marker.id}`] = {
+        bearing: 10,
+        center: [marker.lng, marker.lat],
+        zoom: 15.5,
+        pitch: 20
+      }
+    );
+    const map = buildMap(mapElement);
     addMarkersToMap(map, markers);
     fitMapToMarkers(map, markers);
     let activeChapterName = `restaurant-card-${markers[0].id}`;
@@ -98,16 +108,7 @@ const initMapbox = () => {
     };
   }
 
-  const markers = JSON.parse(mapElement.dataset.markers);
-  let chapters = {}
-  markers.forEach(marker =>
-    chapters[`restaurant-card-${marker.id}`] = {
-      bearing: 10,
-      center: [marker.lng, marker.lat],
-      zoom: 15.5,
-      pitch: 20
-    }
-    );
+
 
 
 
