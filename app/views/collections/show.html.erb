@@ -1,0 +1,13 @@
+<div class="container my-3">
+
+ <ul class="">
+    <% @collection.restaurants.each do |restaurant| %>
+      <li>
+        <h2>
+          <%= restaurant.name %>
+        </h2>
+      </li>
+    <% end %>
+</ul>
+
+</div>

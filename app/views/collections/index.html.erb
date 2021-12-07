@@ -1,18 +1,22 @@
-<h1> Your collections </h1>
-  <% @user_collections.each do |collection| %>
-  <h3> <%= collection.name %> </h3>
-  <p> <%= collection.description %> </p>
-<% end %>
+<div class="container my-4">
+  <h1> Your collections </h1>
+    <% @user_collections.each do |collection| %>
+    <h3> <%= collection.name %> </h3>
+    <p> <%= collection.description %> </p>
+    <%= link_to "Edit", edit_collection_path(collection), class:'btn btn-outline-primary' %>
+    <%= link_to "Delete", collection, method: :delete, data: {confirm: "Are you sure?"}, class: 'btn btn-outline-primary' %>
+  <% end %>
 
-<h1> Your friends' collections </h1>
-  <% @friends_collections.each do |collection| %>
-  <h3> <%= collection.name %> </h3>
-  <p> <%= collection.description %> </p>
-<% end %>
+  <h1> Your friends' collections </h1>
+    <% @friends_collections.each do |collection| %>
+    <h3> <%= collection.name %> </h3>
+    <p> <%= collection.description %> </p>
+  <% end %>
 
-<h1> All collections </h1>
-<% @collections.each do |collection| %>
-  <h3> <%= collection.name %> </h3>
-  <p> <%= collection.description %> </p>
-  <p> User: <%= collection.user.first_name %> <%= collection.user.last_name %>
-<% end %>
+  <h1> All collections </h1>
+  <% @collections.each do |collection| %>
+    <h3> <%= collection.name %> </h3>
+    <p> <%= collection.description %> </p>
+    <p> User: <%= collection.user.first_name %> <%= collection.user.last_name %>
+  <% end %>
+</div>
