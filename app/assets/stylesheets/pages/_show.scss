@@ -51,6 +51,21 @@ h1 {
   padding-top: 10px;
 }
 
-.buttons {
-  justify-content: space-evenly;
+.buttons a {
+  margin: 10px;
+}
+
+.review-text-container {
+  margin-bottom: 50px;
+}
+
+.review {
+  margin-top: 50px;
+}
+
+@media (max-width: 580px) {
+  .carousel-img {
+    width: 400px;
+    height: 250px;
+  }
 }
