@@ -38,7 +38,7 @@ class RestaurantsController < ApplicationController
     store_location_for(:user, restaurant_path)
     @restaurant = Restaurant.find(params[:id])
     @review = Review.new
-    @markers = {
+    @marker = {
       lat: @restaurant.latitude,
       lng: @restaurant.longitude
     }
