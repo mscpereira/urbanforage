@@ -173,6 +173,7 @@ GEM
     nokogiri (1.12.5-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
+    pagy (5.6.4)
     pg (1.2.3)
     pg_search (2.3.5)
       activerecord (>= 5.2)
@@ -321,6 +322,7 @@ DEPENDENCIES
   google_search_results
   jbuilder (~> 2.7)
   listen (~> 3.3)
+  pagy (~> 5.6)
   pg (~> 1.1)
   pg_search (~> 2.3.0)
   pry-byebug

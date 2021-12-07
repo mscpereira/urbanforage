@@ -24,13 +24,16 @@ import "controllers"
 
 import { initMapbox } from '../plugins/init_mapbox';
 import { initMapboxShow } from '../plugins/init_mapbox_show';
-import { modalOpen } from "../plugins/modal_open"
+import { modalOpen } from "../plugins/modal_open";
+import { readMore } from "../plugins/read_more";
+
 // import { initAutocomplete } from '../plugins/init_autocomplete';
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initMapboxShow();
-  modalOpen()
+  modalOpen();
+  readMore();
   // initAutocomplete();
 })
 
