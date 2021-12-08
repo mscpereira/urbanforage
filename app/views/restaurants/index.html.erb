@@ -1,6 +1,8 @@
 <div class="container p-4">
   <div class="restaurant-index-top d-flex justify-content-between">
-    <%= link_to "Back", restaurants_path, class:"btn btn-outline-primary mb-3" %>
+    <%= link_to restaurants_path do %>
+      <i class="ph-arrow-left" id="back-arrow"></i>
+    <% end %>
     <div class="view-toggle ml-auto p-2">
       <div class="btn-group btn-group-toggle" data-toggle="buttons">
         <label class="btn btn-secondary active d-flex" onclick="listView()">
