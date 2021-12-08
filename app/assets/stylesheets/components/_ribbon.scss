@@ -45,6 +45,13 @@
   box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
   position: absolute;
   top: 19px; right: -21px;
+  p {
+    font-size: 10px;
+    font-weight: bold;
+    font-family: $body-font;
+    color: $white;
+    text-transform: uppercase;
+  }
 }
 .ribbon span::before {
   content: "";
