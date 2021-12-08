@@ -65,7 +65,7 @@ const initMapbox = () => {
     function setActiveChapter(chapterName) {
       if (chapterName === activeChapterName) return;
 
-      map.flyTo(chapters[chapterName]);
+      map.jumpTo(chapters[chapterName]);
 
       document.getElementById(chapterName).classList.add('active');
       document.getElementById(activeChapterName).classList.remove('active');

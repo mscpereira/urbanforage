@@ -1,15 +1,28 @@
 <div class="container my-3">
   <%= link_to 'Back', collections_path, class:'btn btn-outline-primary my-3' %>
   <h1> <%= @collection.name %> </h1>
-  <p> <%= @collection.description %> </p>
- <ul class="">
+  <p class="mb-3"> <%= @collection.description %> </p>
+  <div class="row restaurant-list">
+
     <% @collection.restaurants.each do |restaurant| %>
-      <li>
-        <h2>
-          <%= restaurant.name %>
-        </h2>
-      </li>
+      <div class="col-lg-4 col-sm-12">
+
+          <%#= restaurant.name %>
+        <div class="card my-3 box" id="restaurant-card-<%= restaurant.id %>">
+          <%= link_to restaurant_path(restaurant), class:"text-decoration-none" do %>
+            <%= image_tag restaurant.image, class:"card-img-top" %>
+            <div class="ribbon">
+              <span class="ribbon4"><p class="p-vibe"><%= restaurant.vibes.first.name %></p></span>
+            </div>
+          <% end %>
+            <div class="restaurant-list-title d-flex justify-content-between">
+              <div class="restaurant-index-info p-3">
+                <h3 class="card-title"><%= restaurant.name %></h3>
+              </div>
+            </div>
+          </div>
+        </div>
     <% end %>
-</ul>
+  </div>
 
 </div>
