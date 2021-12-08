@@ -22,7 +22,7 @@
               <div class="carousel-item">
                 <%= image_tag photo.url, width: 400, height: 500, class: 'w-100 carousel-img' %>
               </div>
-              <% end %>
+            <% end %>
             <% else %>
               <div class="carousel-item active">
                 <%= image_tag @restaurant.photos.first.url, width: 400, height: 500, class: 'w-100 carousel-img' %>
@@ -44,26 +44,29 @@
 
   <div class="container container-show p-0">
     <div class="row row-show">
-        <div class="row-reviews p-0 col-12 col-lg-6 justify-content-center align-items-bottom">
-          <div class="row-restaurant">
-            <h1><%= @restaurant.name %></h1>
-            <p><%= @restaurant.description%></p>
-            <hr style="width: 80%">
-          </div>
+      <div class="row-reviews p-0 col-12 col-lg-6 justify-content-center align-items-bottom">
+        <div class="row-restaurant">
+          <h1><%= @restaurant.name %></h1>
+          <p><%= @restaurant.description%></p>
+          <hr style="width: 80%">
+        </div>
 
-          <div class="row-actions justify-content-between" data-controller="insert-in-list" data-insert-in-list-position-value="beforeend">
-            <div data-insert-in-list-target="items" class="review">
-              <% if @restaurant.reviews.blank? %>
-                <p><small>"Be the first to leave a review for <strong><%= @restaurant.name %></strong>"</small></p>
-              <% else %>
-                <% @restaurant.reviews.last(2).each do |review| %>
-                  <div class="review-text-container">
-                    <p class="review-text">
-                    <%= render 'restaurants/review', review: review %>
-                  </p>
+        <div class="row-actions justify-content-between" data-controller="insert-in-list" data-insert-in-list-position-value="beforeend">
+          <div data-insert-in-list-target="items" class="review">
+            <% if @restaurant.reviews.blank? %>
+              <p><small>"Be the first to leave a review for <strong><%= @restaurant.name %></strong>"</small></p>
+            <% else %>
+              <% @restaurant.reviews.last(2).reverse.each do |review| %>
+                <div class="review-text-container">
+                  <p class="review-text">
+                  <%= render 'restaurants/review', review: review %>
+                </p>
                 </div>
-                <% end %>
               <% end %>
+              <%= link_to restaurant_reviews_path(@restaurant, @review), style: "color:darkblue" do %>
+                <p>See all the <%= pluralize @restaurant.reviews.size, "review" %>...</p>
+              <% end %>
+            <% end %>
             <div class="buttons d-flex justify-content-start mt-5">
               <%= link_to "Directions", @restaurant.directions , class: "btn btn-outline-primary mb-3 mt-3", target: "_blank" %>
               <%= link_to "Book", @restaurant.website, class: "btn btn-outline-primary mb-3 mt-3 ml-0", target: "_blank" %>
@@ -73,10 +76,10 @@
                 <p class="review-login">Please login or create a new account to add a review.</p>
               <% end %>
             </div>
-              <%= render 'restaurants/modal_new', restaurant: @restaurant, review: @review %>
-            </div>
+            <%= render 'restaurants/modal_new', restaurant: @restaurant, review: @review %>
           </div>
         </div>
+      </div>
 
       <div class="row-map col-12 col-lg-6">
         <div id="map-show"
@@ -85,7 +88,6 @@
           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
       </div>
-    </div>
     </div>
   </div>
 </div>
