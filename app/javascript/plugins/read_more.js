@@ -1,17 +1,26 @@
-// // const text = document.querySelector('.text-overflow');
-// const btn = document.querySelector('.btn-overflow');
-// const reviewPara = document.querySelector('.review-para')
+// const text = document.querySelector('.text-overflow');
 
-// const readMore = btn.addEventListener(("click"), event => {
-//   event.stopPropagation();
+const readMore = () => {
+  const reviewPara = document.getElementById('table');
+  if (reviewPara) {
+    const elementHeight = document.querySelectorAll(".review-para")[2].offsetHeight
+    const allBtn = document.querySelectorAll('.btn-overflow');
+    allBtn.forEach((btn) => {
+      if (elementHeight > 38) {
+        btn.classList.add("disabled-button")
+      }
+      btn.addEventListener("click", (event) => {
+        // console.log(event.path[1].firstElementChild);
+        const textElement = event.path[1].firstElementChild;
+        textElement.classList.toggle("review-para");
+        if (event.target.innerHTML === "Show more...") {
+          event.target.innerHTML = "Show less...";
+        } else {
+          event.target.innerHTML = "Show more...";
+        }
+      });
+    });
+  }
+}
 
-//     reviewPara.classList.toggle("review-para")
-//     if (btn.innerHTML === "Show more...") {
-//       btn.innerHTML = "Show less...";
-//     } else {
-//       btn.innerHTML = "Show more...";
-//     }
-
-// });
-
-// export { readMore }
+export { readMore }

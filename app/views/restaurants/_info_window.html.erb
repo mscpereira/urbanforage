@@ -1,6 +1,8 @@
 <div id="restaurant-location-<%= restaurant.id %>">
   <%= link_to restaurant_path(restaurant) do %>
-  <%= image_tag restaurant.image, class:'w-100', id:"restaurant-popup-image" %>
+  <div class="map-image">
+    <%= image_tag restaurant.image, class:'w-100', id:"restaurant-popup-image" %>
+  </div>
   <h3> <%= restaurant.name %> </h3>
   <p> <%= restaurant.address %> </p>
   <% end %>

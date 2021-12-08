@@ -10,10 +10,15 @@
   }
 }
 
-// .review-para {
-//   // max-height: 38px;
-//   // overflow: hidden;
-// }
+
+.review-para {
+  max-height: 38px;
+  overflow: hidden;
+}
+
+.disabled-button {
+  display: none;
+}
 
 .pagination {
   margin-left: 20px

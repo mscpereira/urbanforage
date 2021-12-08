@@ -12,18 +12,22 @@
         <% @reviews.each do |review| %>
           <tr>
           <div class="container-row">
-            <th scope="row"></th>
+            <% if review.user.photo.key.nil? %>
+              <th scope="row"> <%= image_tag "unisex-avatar2.jpg", height: 50, width: 50, crop: :fill, class: "small-avatar-default"%> </th>
+            <% else %>
+              <th scope="row"><%= cl_image_tag review.user.photo.key, height: 50, width: 50, crop: :fill, class: "small-avatar"%></th>
+            <% end %>
             <div class="text-overflow"><td style="padding-right: 0">
               <p class="review-para"><%= review.user.first_name.capitalize %> <%= review.user.last_name.capitalize %> said: <em>"<%= review.description %>"</em></p>
-              <a class="btn-overflow less" href="#">Show more...</a>
-            <td></div>
-            <p>Rating: <%=
+              <button class="btn-overflow less">Show more...</button>
+            </td></div>
+            <td><p>Rating: <%=
             "<i class='fas fa-star' id='star' style='color: $gray; text-shadow: 1px 1px 1px black'></i>".html_safe * review.rating
             %><%=
             "<i class='far fa-star' id='star' ></i>".html_safe * (5 - review.rating) %> (<small><em><%= review.created_at.strftime("%d-%m-%Y")%></small></em>)</p>
             </td>
-          </tr>
           </div>
+          </tr>
         <% end %>
         </tbody>
       </table>
