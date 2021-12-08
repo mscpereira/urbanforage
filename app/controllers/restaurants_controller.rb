@@ -9,7 +9,8 @@ class RestaurantsController < ApplicationController
       flash[:alert] = "You need to select at least one vibe!"
       redirect_to :vibes
     else
-      # @restaurant_vibe = RestaurantVibe.find(params[:restaurant_id]),
+
+      @collections = Collection.all
       @restaurants = []
       @vibes = []
       params.each_key do |key|

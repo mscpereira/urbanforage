@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :find_restaurant, only: %i[create]
+  before_action :find_restaurant, only: %i[index create]
   # before_action :find_user
 
   # def new
@@ -8,7 +8,7 @@ class ReviewsController < ApplicationController
   # end
 
   def index
-    @reviews = Review.all
+    @pagy, @reviews = pagy(@restaurant.reviews.order(created_at: :desc), items: 6)
   end
 
   def create

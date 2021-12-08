@@ -17,3 +17,10 @@
 .mapboxgl-canvas {
   border-radius: 8px !important;
 }
+
+.mapboxgl-popup-close-button {
+  padding: 5px;
+  font-size: 20px;
+  z-index: 1;
+  background-color: $white;
+}
