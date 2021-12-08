@@ -27,6 +27,7 @@
            <div class="card my-3" id="restaurant-card-<%= restaurant.id %>">
               <%= link_to restaurant_path(restaurant), class:"text-decoration-none" do %>
                 <%= image_tag restaurant.image, class:"card-img-top" %>
+                <p><%= restaurant.vibes.first.name %></p>
               <% end %>
                   <div class="restaurant-list-title d-flex justify-content-between">
                     <div class="restaurant-index-info p-3">
