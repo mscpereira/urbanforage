@@ -1,6 +1,6 @@
 <div class="container">
 
-  <%= link_to "Back", :back, class:"btn btn-outline-primary mb-3" %>
+  <%= link_to_back(session[:vibes]) %>
 
   <div class="carousel container-carousel justify-content-center">
     <div class="row">
@@ -68,12 +68,12 @@
               <% end %>
             <% end %>
             <div class="buttons d-flex justify-content-start mt-5">
-              <%= link_to "Directions", @restaurant.directions , class: "btn btn-outline-primary mb-3 mt-3", target: "_blank" %>
+              <%= link_to "Directions", @restaurant.directions, class: "btn btn-outline-primary mb-3 mt-3", target: "_blank" %>
               <%= link_to "Book", @restaurant.website, class: "btn btn-outline-primary mb-3 mt-3 ml-0", target: "_blank" %>
               <% if user_signed_in? %>
                 <button type="button" class="btn btn-outline-primary ml-0 mb-3 mt-3" style="height: 58px" data-toggle="modal" data-target="#exampleModal">Add a review</button>
               <% else %>
-                <p class="review-login">Please login or create a new account to add a review.</p>
+                <%= link_to "Please login", new_user_session_path, :class => "please-login btn btn-outline-primary mb-3 mt-3" %>
               <% end %>
             </div>
             <%= render 'restaurants/modal_new', restaurant: @restaurant, review: @review %>
