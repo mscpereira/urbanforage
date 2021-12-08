@@ -1,6 +1,7 @@
 require 'google_search_results'
 
 puts "Pulling out restaurant seeds"
+RestaurantCollection.destroy_all
 RestaurantVibe.destroy_all
 Photo.destroy_all
 Vibe.destroy_all

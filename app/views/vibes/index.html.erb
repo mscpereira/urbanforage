@@ -4,16 +4,62 @@
   <h1 class="my-5">What vibe are you feeling today?</h1>
     <form action="/restaurants">
       <div class="row justify-content-end">
-        <% @vibes.each do |vibe| %>
-          <div class="col-md-4 col-sm-12">
-            <input class="my-class" type="checkbox" id="vibe-<%=vibe.id%>" name="vibe-<%=vibe.id%>" value="<%=vibe.name%>">
-              <label class="cards-vibe-label" for="vibe-<%=vibe.id%>">
-                <div class="card cards-vibe justify-content-center align-items-center" style="background-image:url(<%= vibe.restaurants.sample.image %>)">
-                  <div class="cards-info"><h3><%= vibe.name %></h3></div>
+
+      <div class="col-md-4 col-sm-12">
+            <input class="my-class" type="checkbox" id="vibe-<%=@vibes.where(name:'alternative')[0][:id]%>" name="vibe-<%=@vibes.where(name:'alternative')[0][:id]%>" value="alternative">
+              <label class="cards-vibe-label" for="vibe-<%= @vibes.where(name:'alternative')[0][:id]%>">
+                <div class="card cards-vibe justify-content-center align-items-center" id="alternative-image">
+                  <div class="cards-info"><h3>Alternative</h3></div>
                 </div>
               </label>
           </div>
-        <% end %>
+
+          <div class="col-md-4 col-sm-12">
+            <input class="my-class" type="checkbox" id="vibe-<%=@vibes.where(name:'scenic')[0][:id]%>" name="vibe-<%=@vibes.where(name:'scenic')[0][:id]%>" value="scenic">
+              <label class="cards-vibe-label" for="vibe-<%= @vibes.where(name:'scenic')[0][:id]%>">
+                <div class="card cards-vibe justify-content-center align-items-center" id="scenic-image">
+                  <div class="cards-info"><h3>Scenic</h3></div>
+                </div>
+              </label>
+          </div>
+
+          <div class="col-md-4 col-sm-12">
+            <input class="my-class" type="checkbox" id="vibe-<%=@vibes.where(name:'cozy')[0][:id]%>" name="vibe-<%=@vibes.where(name:'cozy')[0][:id]%>" value="cozy">
+              <label class="cards-vibe-label" for="vibe-<%= @vibes.where(name:'cozy')[0][:id]%>">
+                <div class="card cards-vibe justify-content-center align-items-center" id="cozy-image">
+                  <div class="cards-info"><h3>Cozy</h3></div>
+                </div>
+              </label>
+          </div>
+
+          <div class="col-md-4 col-sm-12">
+            <input class="my-class" type="checkbox" id="vibe-<%=@vibes.where(name:'minimalist')[0][:id]%>" name="vibe-<%=@vibes.where(name:'minimalist')[0][:id]%>" value="minimalist">
+              <label class="cards-vibe-label" for="vibe-<%= @vibes.where(name:'minimalist')[0][:id]%>">
+                <div class="card cards-vibe justify-content-center align-items-center" id="minimalist-image">
+                  <div class="cards-info"><h3>Minimalist</h3></div>
+                </div>
+              </label>
+          </div>
+
+          <div class="col-md-4 col-sm-12">
+            <input class="my-class" type="checkbox" id="vibe-<%=@vibes.where(name:'earthy')[0][:id]%>" name="vibe-<%=@vibes.where(name:'earthy')[0][:id]%>" value="earthy">
+              <label class="cards-vibe-label" for="vibe-<%= @vibes.where(name:'earthy')[0][:id]%>">
+                <div class="card cards-vibe justify-content-center align-items-center" id="earthy-image">
+                  <div class="cards-info"><h3>Earthy</h3></div>
+                </div>
+              </label>
+          </div>
+
+          <div class="col-md-4 col-sm-12">
+            <input class="my-class" type="checkbox" id="vibe-<%=@vibes.where(name:'melodic')[0][:id]%>" name="vibe-<%=@vibes.where(name:'melodic')[0][:id]%>" value="melodic">
+              <label class="cards-vibe-label" for="vibe-<%= @vibes.where(name:'melodic')[0][:id]%>">
+                <div class="card cards-vibe justify-content-center align-items-center" id="melodic-image">
+                  <div class="cards-info"><h3>Melodic</h3></div>
+                </div>
+              </label>
+          </div>
+
+
         <input type="submit" value="View Restaurants" class= 'btn btn-primary justify-content-md-end m-2'>
       </div>
     </form>

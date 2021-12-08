@@ -4,11 +4,17 @@ class RestaurantsController < ApplicationController
 
   def index
     store_location_for(:user, restaurants_path)
-
     if params.keys.count == 2
       flash[:alert] = "You need to select at least one vibe!"
       redirect_to :vibes
     else
+      vibes = []
+      params.keys[0..-3].each do |vibe|
+        vibes << params[vibe]
+      end
+      session[:vibes] = vibes
+
+
       @collections = Collection.all
       @restaurants = []
       @vibes = []
@@ -48,6 +54,7 @@ class RestaurantsController < ApplicationController
   end
 
   private
+
 
   def find_restaurant
     @restaurant = Restaurant.find(params[:id])

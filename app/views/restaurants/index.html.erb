@@ -24,9 +24,12 @@
     <div class="restaurant-index d-flex justify-content-between">
     <div class="restaurant-list w-100 mr-3" id="restaurant-list-view">
         <% @restaurants.each do |restaurant| %>
-           <div class="card my-3" id="restaurant-card-<%= restaurant.id %>">
+           <div class="card my-3 box" id="restaurant-card-<%= restaurant.id %>">
               <%= link_to restaurant_path(restaurant), class:"text-decoration-none" do %>
                 <%= image_tag restaurant.image, class:"card-img-top" %>
+                  <div class="ribbon">
+                    <span class="ribbon4"><p class="p-vibe"><%= restaurant.vibes.first.name %></p></span>
+                  </div>
               <% end %>
                   <div class="restaurant-list-title d-flex justify-content-between">
                     <div class="restaurant-index-info p-3">

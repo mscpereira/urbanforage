@@ -1,7 +1,7 @@
 .container-vibes {
   border: 5px;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   // padding-top: 100px;
 }
 
@@ -9,7 +9,7 @@
   position: relative;
   overflow: hidden;
   // margin-bottom: 15px;
-  height: 150px;
+  height: 300px;
   border-radius: 15px;
   background-size: cover;
   background-position: center;
@@ -97,4 +97,29 @@
 
 .notice {
   margin: 0;
+}
+
+
+#alternative-image {
+  background-image: url(asset-path('alternative-vibe.jpg'));
+}
+
+#earthy-image {
+  background-image: url(asset-path('earthy-vibe.jpg'));
+}
+
+#cozy-image {
+  background-image: url(asset-path('cozy-vibe.jpg'));
+}
+
+#minimalist-image {
+  background-image: url(asset-path('minimalist-vibe.jpg'));
+}
+
+#scenic-image {
+  background-image: url(asset-path('scenic-vibe.jpg'));
+}
+
+#melodic-image {
+  background-image: url(asset-path('melodic-vibe.jpg'));
 }

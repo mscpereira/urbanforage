@@ -8,6 +8,7 @@ class ReviewsController < ApplicationController
   # end
 
   def index
+    store_location_for(:user,restaurants_path)
     @pagy, @reviews = pagy(@restaurant.reviews.order(created_at: :desc), items: 6)
     @users = User.all
   end
