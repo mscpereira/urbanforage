@@ -25,11 +25,10 @@ $border-radius-sm: 2px;
 
 // Override other variables below!
 
-// remove white bar on top of landing page
-* {
-  // margin: 0!important;
+#full-height {
+  height: 70vh!important;
+  // margin-bottom: 1000px;
 }
-
 // fonts
 
 h1 {
@@ -66,6 +65,7 @@ p {
   border: 2px solid #233531;
   box-sizing: border-box;
   border-radius: 50px!important;
+  font-size: 1.3rem!important;
   // padding: 1.3rem;
 }
 
@@ -73,6 +73,7 @@ p {
   border: 2px solid #233531;
   box-sizing: border-box;
   border-radius: 50px!important;
+  font-size: 1.3rem!important;
   // padding: 1.3rem;
   &:hover{
     color: $white;
@@ -83,6 +84,7 @@ p {
   border: 2px solid $white;
   box-sizing: border-box;
   border-radius: 50px!important;
+  font-size: 1.3rem!important;
   // padding: 1.3rem;
 }
 
@@ -90,6 +92,7 @@ p {
   border: 2px solid $white;
   box-sizing: border-box;
   border-radius: 50px!important;
+  font-size: 1.3rem!important;
   // padding: 1.3rem;
 }
 

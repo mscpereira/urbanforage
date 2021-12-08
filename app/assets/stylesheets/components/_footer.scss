@@ -10,20 +10,24 @@
 }
 
 .footer-bg {
-  background-color: #FEFCF3;
-  color:#233531;
+  background-color: $gray;
+  color:$white;
+  position: relative;
 }
 
 .facebook-icon {
-  color: #3B5998;
+  // color: #3B5998;
+  color:$white;
 }
 
 .linkedin-icon {
-  color: #007bb5;
+  // color: #007bb5;
+  color:$white;
 }
 
 .instagram-icon {
-  color: #b3358b;
+  // color: #b3358b;
+  color:$white;
 }
 
 // body{
@@ -32,14 +36,17 @@
 //     flex-direction: column;
 // }
 
-footer {
-  margin-top: auto;
-}
-
 .footer-bg {
-  width: 100%;
+  // width: 100%;
+  display: flex;
 }
 
 .row-footer {
-  width: 100%
+  // width: 100%
+}
+
+.copyright {
+  background-color: $gray;
+  color: $white;
+  border-top: 0.5px solid $white;
 }
