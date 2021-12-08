@@ -1,4 +1,4 @@
-
+<div class="container mt-4">
 
 <% if user_signed_in? %>
   <div class="menu-wrap" id="navbar">
@@ -13,7 +13,8 @@
         <div>
           <ul>
             <li><a href="#"><%= link_to 'Home', root_path%></a></li>
-            <li><a href="#"><%= link_to 'Change the vibe', vibes_path %></a></li>
+            <li><a href="#"><%= link_to 'Vibes', vibes_path %></a></li>
+            <li><a href="#"><%= link_to 'Collections', vibes_path %></a></li>
             <li><a href="#"><%= link_to "Log out", destroy_user_session_path, method: :delete %></a></li>
           </ul>
         </div>
@@ -34,6 +35,8 @@
         <div class="navbar-links">
           <ul>
             <li><a href="#"><%= link_to 'Home', root_path %></a></li>
+            <li><a href="#"><%= link_to 'Vibes', vibes_path %></a></li>
+            <li><a href="#"><%= link_to 'Collections', collections_path %></a></li>
             <li><a href="#"><%= link_to "Sign up", new_user_registration_path %></a></li>
             <li><a href="#"><%= link_to "Log in", new_user_session_path %></a></li>
           </ul>
@@ -43,3 +46,5 @@
   </div>
    </div>
 <% end %>
+
+</div>
