@@ -11,9 +11,14 @@
 }
 
 .review-para {
-  // max-height: 38px;
-  // overflow: hidden;
+  max-height: 38px;
+  overflow: hidden;
 }
+
+.disabled-button {
+  display: none;
+}
+
 .pagination {
   margin-left: 20px
 }

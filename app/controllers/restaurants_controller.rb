@@ -47,7 +47,8 @@ class RestaurantsController < ApplicationController
     @review = Review.new
     @marker = {
       lat: @restaurant.latitude,
-      lng: @restaurant.longitude
+      lng: @restaurant.longitude,
+      info_window: render_to_string(partial: "info_window_show", locals: { restaurant: @restaurant })
     }
     session[:marker] = @marker
   end

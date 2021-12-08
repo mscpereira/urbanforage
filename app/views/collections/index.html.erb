@@ -30,12 +30,29 @@
       <% end %>
     </div>
 
-  <div class="all-collections my-5">
+  <div class="all-collections row my-5">
+    <div class="col-12">
     <h1> All collections </h1>
     <% @collections.each do |collection| %>
       <h3> <%= collection.name %> </h3>
       <p> <%= collection.description %> </p>
       <p> User: <%= collection.user.first_name %> <%= collection.user.last_name %>
     <% end %>
+    <div class="photoset -square -portrait"> <!--Can also do portrait or square, remove the "-" prefix-->
+   <!--Add or remove some of these-->
+   <img style="background-image:url(https://78.media.tumblr.com/343322f00cf3a6b7a4f460cbc766aa1c/tumblr_p773r1ugkd1wd32uro1_1280.jpg)" >
+   <a href="https://blog.tumblr.com/image/0000000000" target="_blank" class="photo" style="background-image:url(https://78.media.tumblr.com/a8158f5113ac52008eb3fe86bc87eadd/tumblr_p773r1ugkd1wd32uro2_400.jpg)"></a>
+   <a href="https://blog.tumblr.com/image/0000000000" target="_blank" class="photo" style="background-image:url(https://78.media.tumblr.com/5091ebebffe12dd2b7b6e510ccfd141e/tumblr_p773r1ugkd1wd32uro3_400.jpg)"></a>
+   <a href="https://blog.tumblr.com/image/0000000000" target="_blank" class="photo" style="background-image:url(https://78.media.tumblr.com/7e95258e791956cfb963f99748084064/tumblr_p773r1ugkd1wd32uro4_400.jpg)"></a>
+   <a href="https://blog.tumblr.com/image/0000000000" target="_blank" class="photo" style="background-image:url(https://78.media.tumblr.com/81caa127eb8502865c3f4fb9cc710de7/tumblr_p773r1ugkd1wd32uro5_400.jpg)"></a>
+   <a href="https://blog.tumblr.com/image/0000000000" target="_blank" class="photo" style="background-image:url(https://78.media.tumblr.com/c62c2379b7fc2c16b0bc3c9efcc915ac/tumblr_p773r1ugkd1wd32uro6_400.jpg)"></a>
+</div>
+</div>
+<!--
+Default tumblr photosets either output each on a new row or use JavaScript
+With this you lose a tiny bit of freedom of custom fitting (unless you like more orderly aspect ratios then it's a gain) but you (also) gain it sorting itself out instantly,
+-->
+
+
   </div>
 </div>
