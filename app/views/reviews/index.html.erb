@@ -16,7 +16,7 @@
               <th scope="row"><%= cl_image_tag review.user.photo.key, height: 50, width: 50, crop: :fill, class: "small-avatar"%></th>
             <% end %>
             <div class="text-overflow"><td style="padding-right: 0">
-              <p class="review-para teste"><%= review.user.first_name.capitalize %> <%= review.user.last_name.capitalize %> said: <em>"<%= review.description %>"</em></p>
+              <p class="review-para"><%= review.user.first_name.capitalize %> <%= review.user.last_name.capitalize %> said: <em>"<%= review.description %>"</em></p>
               <button class="btn-overflow less">Show more...</button>
             </td></div>
             <td><p>Rating: <%=
