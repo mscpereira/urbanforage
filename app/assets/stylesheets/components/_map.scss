@@ -11,9 +11,9 @@
   background-color: $white !important;
   a {
     text-decoration: none!important;
-  }
-  &:focus {
-    outline: none!important;
+    &:focus {
+      outline: none!important;
+    }
   }
 }
 
