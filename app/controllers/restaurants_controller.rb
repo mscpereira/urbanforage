@@ -9,6 +9,7 @@ class RestaurantsController < ApplicationController
       flash[:alert] = "You need to select at least one vibe!"
       redirect_to :vibes
     else
+
       @collections = Collection.all
       @restaurants = []
       @vibes = []
