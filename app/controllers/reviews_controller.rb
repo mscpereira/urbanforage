@@ -9,6 +9,7 @@ class ReviewsController < ApplicationController
 
   def index
     @pagy, @reviews = pagy(@restaurant.reviews.order(created_at: :desc), items: 6)
+    @users = User.all
   end
 
   def create
