@@ -26,15 +26,25 @@ import { initMapbox } from '../plugins/init_mapbox';
 import { initMapboxShow } from '../plugins/init_mapbox_show';
 import { modalOpen } from "../plugins/modal_open";
 import { readMore } from "../plugins/read_more";
+import { initSweetalert } from '../plugins/init_sweetalert';
 
 // import { initAutocomplete } from '../plugins/init_autocomplete';
 
 document.addEventListener('turbolinks:load', () => {
-  initMapbox();
-  initMapboxShow();
+  if (document.querySelector(".restaurants-index")) {
+    initMapbox();
+  };
+  if (document.querySelector(".restaurants-show")) {
+    initMapboxShow();
+  }
   modalOpen();
   readMore();
   // initAutocomplete();
+  initSweetalert('#sweet-alert-demo', {
+    title: "Added to collection",
+    text: "Add more restaurants anytime!",
+    icon: "success"
+  });
 })
 
 
@@ -45,3 +55,5 @@ document.addEventListener('turbolinks:load', () => {
 //     $(this).css("transform", "");
 //   }
 // });
+
+  // sweetalert js. call
