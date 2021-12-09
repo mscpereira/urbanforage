@@ -49,6 +49,7 @@
                         <h4>Add to collection</h4>
                       </div>
                       </li>
+                        <% if user_signed_in? %>
                           <% @collections.each do |collection| %>
                                 <li class="list-group-item" id="sweet-alert-demo">
                                    <%= link_to collection.name, collection_restaurant_collections_path(collection, restaurant: restaurant), method: :post %>
@@ -59,6 +60,13 @@
                               Add to new collection
                             <% end %>
                           </li>
+                        <% else %>
+                          <li class="list-group-item" id="new-collection-link">
+                            <%= link_to new_collection_path(id: restaurant.id) do %>
+                              Login
+                            <% end %>
+                          </li>
+                        <% end %>
                   </ul>
                 </div>
             </div>
