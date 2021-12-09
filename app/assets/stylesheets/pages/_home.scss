@@ -1,14 +1,14 @@
 
 .container-home {
-  // width: 100%;
-  // height: 100vh;
+  width: 100%;
+  height: 100vh;
 }
 
 .banner {
   background-size: cover;
   background-position: 0% 75%;
   padding: 20px;
-  // width: 100%;
+  width: 100%;
   // height: 100%;
   height: 100vh;
 }
@@ -16,8 +16,8 @@
 .container-banner {
   margin-left: 20px;
   margin-right: 20px;
-  // height: 100vh;
-  // height: 100%;
+  height: 100vh;
+  height: 100%;
 }
 
 
@@ -28,38 +28,38 @@
   align-items: center;
   justify-content: space-between;
   img {
-    margin-right: 60px;
+    // margin-right: 60px;
   }
 }
 
-// .container-login {
-//   button {
-//     transition: all .4s ease-out;
-//   }
-//   button:hover {
-//     transform: translate(-1px, -2px);
-//     #login-link, #logout-link {
-//     color: $gray;
-//     text-decoration: none;
-//     }
-//     #signup-link{
-//       color:$white;
-//       text-decoration: none;
-//     }
-//   }
+.container-login {
+  // button {
+  //   transition: all .4s ease-out;
+  // }
+  // button:hover {
+  //   transform: translate(-1px, -2px);
+  //   #login-link, #logout-link {
+  //   color: $gray;
+  //   text-decoration: none;
+  //   }
+  //   #signup-link{
+  //     color:$white;
+  //     text-decoration: none;
+  //   }
+  // }
 
-//   button #signup-link:hover {
-//     color: $white;
-//   }
-//   a {
-//     font-size: 20px;
-//     color: $white;
-//   }
-// }
+  // button #signup-link:hover {
+  //   color: $white;
+  // }
+  // a {
+  //   font-size: 20px;
+  //   color: $white;
+  // }
+}
 
 .container-info {
-  margin-left: 30px;
-  max-width: 950px;
+  // margin-left: 30px;
+  // max-width: 950px;
   h1 {
     color: $white;
     margin-bottom: 1rem;
@@ -167,14 +167,61 @@
   }
 
   .container-login{
-    margin-left: 20px;
+    // margin-left: 20px;
     button {
       box-shadow: 1px 1px 1px rgba($color: #000000, $alpha: 0.3);
-      margin-left: 0;
+      // margin-left: 0;
       margin-top: 20px;
     }
   }
 }
+
+@media (max-width: 375px) {
+  /* For a screen < 375px, this CSS will be read */
+  #title {
+    font-size: 40px;
+    line-height: 40px!important;
+  }
+  .container-home {
+    width: 100%;
+  }
+
+  .container-info {
+    margin-left: 10px;
+    // #title {
+    //   font-size: 3rem;
+    //   line-height: 2rem;
+    // }
+    .btn {
+      width: 100%!important;
+      margin: auto;
+    }
+  }
+
+  .container-header {
+    display: grid;
+    margin-bottom: 70px;
+  }
+  // img {
+  //   margin-right: 50px;
+  // }
+  // button {
+  //   width: 50px!important;
+  //   margin-left: 100px;
+  //   margin-top: 10px;
+  //   height: 40px;
+  // }
+
+  .container-login{
+  //   margin-left: 20px;
+  //   button {
+  //     box-shadow: 1px 1px 1px rgba($color: #000000, $alpha: 0.3);
+  //     margin-left: 0;
+  //     margin-top: 20px;
+  //   }
+  }
+}
+
 
 #welcome-msg {
   font-weight: lighter;

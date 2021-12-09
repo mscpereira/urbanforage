@@ -141,7 +141,7 @@ p {
   h1 {
     font-weight: bold;
     font-size: 40px;
-    line-height: 98.2%;
+    // line-height: 98.2%;
   }
 
   h2 {
@@ -164,11 +164,14 @@ p {
 
 // buttons
 
+  .btn {
+    line-height: 0!important;
+  }
   .btn-primary {
     border: 2px solid #233531;
     box-sizing: border-box;
     height: 53px;
-    width: 336px;
+    width: 100%;
     border-radius: 50px!important;
   }
 
@@ -194,6 +197,9 @@ p {
     height: 53px;
     width: 336px;
     border-radius: 50px!important;
+  }
+  .form-control-lg {
+    width: 100%;
   }
 }
 
