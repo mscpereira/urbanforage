@@ -88,3 +88,27 @@ h1 {
   background-color: $green;
   color: $white;
 }
+
+.buttons-show {
+  margin-bottom: 10px;
+  a {
+    margin-right: 7px;
+    margin-left: 7px;
+  }
+}
+
+
+@media (max-width: 991px) {
+  .restaurant-map {
+    height: 500px!important;
+  }
+  .restaurant-index-search {
+    display: grid!important;
+    h2 {
+      width: 95%!important;
+    }
+    .btn {
+      margin-top: 7px!important
+    }
+  }
+}

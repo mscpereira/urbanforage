@@ -36,3 +36,13 @@
   </div>
 
 </div>
+
+<% if current_user.favorited?(@collection) %>
+  <%= link_to favorite_collection_path(@collection), method: :patch, remote: true do %>
+    <i class="fas fa-heart"></i>
+  <% end %>
+<% else %>
+  <%= link_to favorite_collection_path(@collection), method: :patch, remote: true do %>
+    <i class="far fa-heart"></i>
+   <% end %>
+<% end %>
