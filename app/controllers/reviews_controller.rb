@@ -27,8 +27,6 @@ class ReviewsController < ApplicationController
         format.html { render 'restaurants/show' }
         format.json
       end
-
-
     end
   end
 

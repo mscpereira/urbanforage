@@ -10,12 +10,24 @@
   }
 }
 
+
 .review-para {
-  max-height: 38px;
+  max-height: 40px;
   overflow: hidden;
 }
 
-.disabled-button {
+.less {
+  background-color: transparent;
+  border: none;
+  margin-top: 10px;
+  color: rgba(0, 0, 0, 0.637);
+  &:hover {
+    text-decoration: underline;
+  }
+  font-size: 15px;
+}
+
+.hidden-btn {
   display: none;
 }
 

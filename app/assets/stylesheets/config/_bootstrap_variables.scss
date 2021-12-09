@@ -31,6 +31,10 @@ $border-radius-sm: 2px;
 }
 // fonts
 
+a {
+  text-decoration: none!important;
+}
+
 h1 {
   font-size: 4rem!important;
   font-weight: 700;
@@ -199,73 +203,7 @@ p {
   color: $white; /* WebKit/Blink Browsers */
 }
 
-.restaurant-list {
-  // width: 100%;
-  .card {
-    width: 100%;
-    border-radius: 10px!important;
-    border: none;
-    box-shadow: 0px 0px 4px #e9e8e6;
-    z-index: 1; // ADDED THIS
-    i {
-      font-size: 40px;
-    }
-    .card-img-top {
-      // width: 100%;
-      border-top-left-radius: 10px;
-      border-top-right-radius: 10px;
-      height: 16rem;
-      object-fit: cover;
-    }
-  }
 
-  .list-group {
-    border-radius: 10px;
-  }
-
-  .list-group-item {
-    background-color: $gray;
-    position: relative;
-    top: 10;
-    color: $white;
-    &:hover {
-        background-color: $green;
-      }
-      h4 {
-        font-weight: 300;
-        font-size: 24px;
-        color: $white;
-      }
-      a {
-        text-decoration: none!important;
-        color: $white!important;
-        font-size: 18px;
-    }
-  }
-  .list-group-item.disabled {
-    background-color: $gray;
-    color: $white;
-  }
-  #new-collection-link {
-    background-color: $white;
-    border: 2px solid $gray;
-    a {
-      color: $gray!important;
-    }
-    &:hover {
-      background-color: $green!important;
-      a {
-        color: $white!important;
-      }
-    }
-  }
-}
-
-
-#add-to {
-  position: relative;
-  bottom: 50px;
-}
 
 .restaurant-map {
   height: 99vh;
@@ -276,14 +214,6 @@ p {
   border-radius: 10px;
 }
 
-#restaurant-card:hover + .marker {
-  display: display;
-}
-
-#restaurant-popup-image {
-  border-radius: 5px;
-  font-size: 20px;
-}
 
 .view-toggle {
   i {
@@ -309,10 +239,6 @@ p {
   font-size: 30px;
 }
 
-#collection-card {
-  a {
-    text-decoration: wavy;
-  }
-  border: 2px solid $gray;
-  border-radius: 10px;
+#back-arrow {
+  font-size: 42px;
 }

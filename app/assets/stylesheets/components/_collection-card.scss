@@ -1,0 +1,54 @@
+.collection-cards {
+  // overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+#collection-card {
+  background-color: $white;
+  height: 200px;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 3px 3px 12px 2px rgba(#e4e0e0, 0.6);
+  transition: 0.2s;
+}
+
+
+#collection-card:not(:first-child) {
+  margin-top: -5rem;
+}
+#collection-card:not(:last-child):hover,
+#collection-card:not(:last-child):focus-within {
+  transform: translateY(-1rem);
+  ~ #collection-card {
+    transform: translateX(0rem);
+  }
+}
+
+.collection-image-div {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  // background-color: $green;
+}
+.collection-image {
+  object-fit: cover;
+  max-height:100%;
+}
+
+#yellow-background {
+  background-color: $yellow;
+}
+
+#red-background {
+  background-color: $red;
+}
+
+#blue-background {
+  background-color: $blue;
+}
+
+#green-background {
+  background-color: $blue;
+}

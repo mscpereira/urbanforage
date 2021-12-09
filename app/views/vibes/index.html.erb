@@ -1,6 +1,8 @@
 <div class="container-vibes">
   <div class="container mt-4">
-  <%= link_to "Back", root_path, class:"btn btn-outline-primary mb-3" %>
+    <%= link_to root_path do %>
+      <i class="ph-arrow-left" id="back-arrow"></i>
+    <% end %>
   <h1 class="my-5">What vibe are you feeling today?</h1>
     <form action="/restaurants">
       <div class="row justify-content-end">

@@ -1,5 +1,8 @@
 <div class="container p-4">
   <div class="restaurant-index-top d-flex justify-content-between">
+    <%= link_to restaurants_path do %>
+      <i class="ph-arrow-left" id="back-arrow"></i>
+    <% end %>
     <div class="view-toggle ml-auto p-2">
       <div class="btn-group btn-group-toggle" data-toggle="buttons">
         <label class="btn btn-secondary active d-flex" onclick="listView()">
@@ -47,7 +50,7 @@
                       </div>
                       </li>
                           <% @collections.each do |collection| %>
-                                <li class="list-group-item">
+                                <li class="list-group-item" id="sweet-alert-demo">
                                    <%= link_to collection.name, collection_restaurant_collections_path(collection, restaurant: restaurant), method: :post %>
                                 </li>
                           <% end %>

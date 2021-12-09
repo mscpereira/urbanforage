@@ -1,10 +1,10 @@
 <div class="container">
 
-  <%= link_to_back(session[:vibes]) %>
+  <%= render "back_show" %>
 
   <div class="carousel container-carousel justify-content-center">
     <div class="row">
-      <div class="carousel-card col-12 p-0">
+      <div class="carousel-card col-12 p-0 mt-3">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 
           <ol class="carousel-indicators">
@@ -56,24 +56,26 @@
             <% if @restaurant.reviews.blank? %>
               <p><small>"Be the first to leave a review for <strong><%= @restaurant.name %></strong>"</small></p>
             <% else %>
-              <% @restaurant.reviews.last(2).reverse.each do |review| %>
+              <% @restaurant.reviews.last(3).reverse.each do |review| %>
                 <div class="review-text-container">
                   <p class="review-text">
                   <%= render 'restaurants/review', review: review %>
                 </p>
                 </div>
               <% end %>
-              <%= link_to restaurant_reviews_path(@restaurant, @review), style: "color:darkblue" do %>
-                <p>See all the <%= pluralize @restaurant.reviews.size, "review" %>...</p>
+              <% if @restaurant.reviews.size > 3  %>
+                <%= link_to restaurant_reviews_path(@restaurant, @review), style: "color:darkblue" do %>
+                  <p>See all the <%= pluralize @restaurant.reviews.size, "review" %>...</p>
+                <% end %>
               <% end %>
             <% end %>
             <div class="buttons d-flex justify-content-start mt-5">
               <%= link_to "Directions", @restaurant.directions, class: "btn btn-outline-primary mb-3 mt-3", target: "_blank" %>
               <%= link_to "Book", @restaurant.website, class: "btn btn-outline-primary mb-3 mt-3 ml-0", target: "_blank" %>
               <% if user_signed_in? %>
-                <button type="button" class="btn btn-outline-primary ml-0 mb-3 mt-3" style="height: 58px" data-toggle="modal" data-target="#exampleModal">Add a review</button>
+                <button type="button" class="btn btn-outline-primary mb-3 mt-3 ml-0" style="height: 65px" data-toggle="modal" data-target="#exampleModal">Add a review</button>
               <% else %>
-                <%= link_to "Please login", new_user_session_path, :class => "please-login btn btn-outline-primary mb-3 mt-3" %>
+                <%= link_to "Login", new_user_session_path, :class => "please-login btn btn-outline-primary mb-3 mt-3" %>
               <% end %>
             </div>
             <%= render 'restaurants/modal_new', restaurant: @restaurant, review: @review %>

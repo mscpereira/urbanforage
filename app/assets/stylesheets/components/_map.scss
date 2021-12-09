@@ -3,7 +3,7 @@
 }
 
 .mapboxgl-popup-content {
-  text-align: center;
+  text-align: left;
   font-family: 'Work Sans', sans-serif;
   font-weight: bold;
   width: 300px;
@@ -11,6 +11,9 @@
   background-color: $white !important;
   a {
     text-decoration: none!important;
+    &:focus {
+      outline: none!important;
+    }
   }
 }
 
@@ -22,5 +25,14 @@
   padding: 5px;
   font-size: 20px;
   z-index: 1;
-  background-color: $white;
+  background-color: $white!important;
+  border-radius: 15px!important;
+  &:hover {
+    color: $green;
+  }
+}
+
+.map-image {
+  width: 100%;
+  height: 200px;
 }

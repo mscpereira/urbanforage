@@ -65,7 +65,7 @@ const initMapbox = () => {
     function setActiveChapter(chapterName) {
       if (chapterName === activeChapterName) return;
 
-      map.flyTo(chapters[chapterName]);
+      map.jumpTo(chapters[chapterName]);
 
       document.getElementById(chapterName).classList.add('active');
       document.getElementById(activeChapterName).classList.remove('active');
@@ -82,6 +82,7 @@ const initMapbox = () => {
     // On every scroll event, check which element is on screen
     window.onscroll = () => {
       for (const chapterName in chapters) {
+        //console.log(chapterName);
         if (isElementOnScreen(chapterName)) {
           // try to close all popups
           // hovermarker.closeOnMove();

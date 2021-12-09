@@ -3,12 +3,18 @@
 const readMore = () => {
   const reviewPara = document.getElementById('table');
   if (reviewPara) {
-    const elementHeight = document.querySelectorAll(".review-para")[2].offsetHeight
+    let elements = document.querySelectorAll("em");
+    elements.forEach((element) => {
+      if (element.offsetHeight > 41) {
+        console.log(element)
+        // btn.classList.add("disabled-button")
+        element.parentElement.nextElementSibling.classList.remove("hidden-btn")
+      }
+    })
     const allBtn = document.querySelectorAll('.btn-overflow');
     allBtn.forEach((btn) => {
-      if (elementHeight > 38) {
-        btn.classList.add("disabled-button")
-      }
+      // console.log(btn)
+      // console.log(elementHeight)
       btn.addEventListener("click", (event) => {
         // console.log(event.path[1].firstElementChild);
         const textElement = event.path[1].firstElementChild;

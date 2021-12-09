@@ -3,7 +3,6 @@
   <head>
     <title><%= meta_title %></title>
     <meta name="description" content="<%= meta_description %>">
-    <%= favicon_link_tag %>
 
     <!-- Facebook Open Graph data -->
     <meta property="og:title" content="<%= meta_title %>" />
@@ -35,7 +34,7 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
 
-  <body>
+  <body class="<%= controller_name %>-<%= action_name %>">
     <%= render 'shared/flashes' %>
 
     <%# <p class="notice"><%= notice %></p>
