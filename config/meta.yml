@@ -1,5 +1,5 @@
 meta_product_name: "Urban Forage"
 meta_title: "Urban Forage - Find your Vibe"
 meta_description: "Search for a place to eat based on your own criteria. What's your vibe today?"
-meta_image: "earthy/image.png" # should exist in `app/assets/images/`
+meta_image: "earthy/image_meta.png" # should exist in `app/assets/images/`
 twitter_account: "@product_twitter_account"
