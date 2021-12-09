@@ -6,7 +6,8 @@ class CollectionsController < ApplicationController
     @user = current_user
     @collections = Collection.where.not(user_id: current_user.id)
     @user_collections = Collection.where(user_id: current_user.id)
-    @friends_collections = Collection.where(user_id: current_user.friends)
+    # @friends_collections = Collection.where(user_id: current_user.friends)
+    @favorites = Favorite.where(favoritor_id: current_user.id)
     # @restaurant_collections = RestaurantCollection.all
   end
 

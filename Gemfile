@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.4'
 
+gem 'acts_as_favoritor'
 gem 'pundit'
 gem 'turbolinks_render'
 gem 'devise'
