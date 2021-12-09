@@ -15,6 +15,7 @@ class RestaurantsController < ApplicationController
       session[:vibes] = vibes if (vibes - Vibe.all.pluck(:name)).empty?
 
       @collections = Collection.all
+      @my_collections = Collection.where(user_id: current_user.id)
       @restaurants = []
       @vibes = []
       params.each_key do |key|

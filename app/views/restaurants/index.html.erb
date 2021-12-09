@@ -54,10 +54,10 @@
                       </div>
                       </li>
                         <% if user_signed_in? %>
-                          <% @collections.each do |collection| %>
-                                <li class="list-group-item" id="sweet-alert-demo">
-                                   <%= link_to collection.name, collection_restaurant_collections_path(collection, restaurant: restaurant), method: :post %>
-                                </li>
+                          <% @my_collections.each do |collection| %>
+                            <li class="list-group-item" id="sweet-alert-demo">
+                                <%= link_to collection.name, collection_restaurant_collections_path(collection, restaurant: restaurant), method: :post %>
+                            </li>
                           <% end %>
                           <li class="list-group-item" id="new-collection-link">
                             <%= link_to new_collection_path(id: restaurant.id) do %>
