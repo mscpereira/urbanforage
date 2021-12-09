@@ -61,11 +61,13 @@
               </a>
 
               <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <% if user_signed_in? %>
                 <% @my_collections.each do |collection| %>
                   <li>
                     <%= link_to collection.name, collection_restaurant_collections_path(collection, restaurant: @restaurant), method: :post, class:"dropdown-item py-4" %>
                   </li>
                 <% end %>
+              <% end %>
                 <li>
                   <%= link_to new_collection_path(id: @restaurant.id), class:"dropdown-item border-top py-4" do %>
                     Add to new collection

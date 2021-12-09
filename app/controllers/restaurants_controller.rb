@@ -15,7 +15,9 @@ class RestaurantsController < ApplicationController
       session[:vibes] = vibes if (vibes - Vibe.all.pluck(:name)).empty?
 
       @collections = Collection.all
-      @my_collections = Collection.where(user_id: current_user.id)
+      if current_user
+        @my_collections = Collection.where(user_id: current_user.id)
+      end
       @restaurants = []
       @vibes = []
       params.each_key do |key|
@@ -45,6 +47,9 @@ class RestaurantsController < ApplicationController
     store_location_for(:user, restaurant_path)
     @collections = Collection.all
     @restaurant = Restaurant.find(params[:id])
+    if current_user
+      @my_collections = Collection.where(user_id: current_user.id)
+    end
     @review = Review.new
     @marker = {
       lat: @restaurant.latitude,
