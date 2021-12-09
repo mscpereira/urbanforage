@@ -1,7 +1,17 @@
 <div class="container my-3">
-  <%= link_to 'Back', collections_path, class:'btn btn-outline-primary my-3' %>
+  <%= link_to collections_path do %>
+    <i class="ph-arrow-left" id="back-arrow"></i>
+  <% end %>
   <h1> <%= @collection.name %> </h1>
   <p class="mb-3"> <%= @collection.description %> </p>
+  <div class="action-btns mt-4">
+                <%= link_to edit_collection_path(@collection) do %>
+                  <i class="ph-pencil-fill" id="action-icon"></i>
+                <% end %>
+                <%= link_to collection_path(@collection), method: :delete, data: {confirm: "Are you sure?"} do %>
+                  <i class="ph-trash-fill" id="action-icon"></i>
+                <% end %>
+                </div>
   <div class="row restaurant-list">
 
     <% @collection.restaurants.each do |restaurant| %>

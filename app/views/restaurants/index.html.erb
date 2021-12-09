@@ -15,7 +15,7 @@
     </div>
   </div>
   <div class="restaurant-index-search d-flex justify-content-between">
-    <h2 class="py-3"><%= @restaurants.count %> <%= @vibes.join(", ") %> restaurants found</h2>
+    <h2 class="py-3" style="width:50%"><%= @restaurants.count %> <%= @vibes.join(", ") %> restaurants found</h2>
     <div class="restaurant-search">
       <%= form_tag restaurants_path, method: :get, class: 'form-inline' do%>
         <%= text_field_tag :query, params[:query], class: "form-control-lg mr-3 p-4", id:"search_category", placeholder: "Look for a restaurant" %>
@@ -50,7 +50,7 @@
                       </div>
                       </li>
                           <% @collections.each do |collection| %>
-                                <li class="list-group-item">
+                                <li class="list-group-item" id="sweet-alert-demo">
                                    <%= link_to collection.name, collection_restaurant_collections_path(collection, restaurant: restaurant), method: :post %>
                                 </li>
                           <% end %>

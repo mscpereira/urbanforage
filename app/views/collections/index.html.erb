@@ -1,7 +1,5 @@
 <div class="container my-4">
   <div class="collection-index-top d-flex justify-content-between align-items-start my-5">
-    <h1> Your collections </h1>
-    <%= link_to 'Create collection', new_collection_path, class:'btn btn-primary my-auto' %>
   </div>
   <% @user_collections.each do |collection| %>
     <%= link_to collection_path(collection) do %>
@@ -44,7 +42,29 @@
         <h3> <%= collection.name %> </h3>
         <p> <%= collection.description %> </p>
         <p> User: <%= collection.user.first_name %> <%= collection.user.last_name %>
+  <div class="row">
+    <div class="col-lg-6 col-sm-12">
+    <h2 class="mb-3"> Your collections </h2>
+      <div class="collection-cards">
+
+      <% @user_collections.each do |collection| %>
+        <div class="collection-card p-3" id="collection-card">
+          <%= link_to collection_path(collection) do %>
+          <div class="collection-info d-flex justify-content-between">
+            <div class="collection-title">
+              <h2> <%= collection.name %> </h2>
+              <p> <%= collection.description %> </p>
+            </div>
+            <div class="collection-image-div" id="<%= ['yellow','red','blue'].sample %>-background">
+              <%#= image_tag 'earthy-vibe.jpg', class:'collection-image' %>
+            </div>
+          </div>
+          <% end %>
+        </div>
       <% end %>
+      <%= link_to 'Create collection', new_collection_path, class:'btn btn-primary my-3' %>
+      </div>
     </div>
+
   </div>
 </div>

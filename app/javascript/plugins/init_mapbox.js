@@ -82,6 +82,7 @@ const initMapbox = () => {
     // On every scroll event, check which element is on screen
     window.onscroll = () => {
       for (const chapterName in chapters) {
+        //console.log(chapterName);
         if (isElementOnScreen(chapterName)) {
           // try to close all popups
           // hovermarker.closeOnMove();

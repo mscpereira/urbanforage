@@ -2,13 +2,11 @@
   border: 5px;
   width: 100%;
   min-height: 100vh;
-  // padding-top: 100px;
 }
 
 .cards-vibe {
   position: relative;
   overflow: hidden;
-  // margin-bottom: 15px;
   height: 300px;
   border-radius: 15px;
   background-size: cover;
@@ -17,6 +15,7 @@
   p {
     margin: 0;
   }
+  border: none!important;
 }
 
 .cards-vibe-label {
@@ -83,7 +82,6 @@
 
 .btn-ghost {
   color: $white;
-  border: 1px solid $white;
   background-color: $green;
   border-width: thing;
   padding: 8px 18px;
@@ -92,12 +90,13 @@
   opacity: 0.6;
   transition: opacity 0.3s ease;
   margin: 4px;
-  box-shadow: 5px 4px 25px 1px rgba(0,0,0,0.37);
+  box-shadow: 3px 3px 12px 2px rgba(#e4e0e0, 0.6);
 }
 
 .notice {
   margin: 0;
 }
+
 
 
 #alternative-image {
