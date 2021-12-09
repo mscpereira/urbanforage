@@ -9,10 +9,10 @@ class RestaurantsController < ApplicationController
       redirect_to :vibes
     else
       vibes = []
-      params.keys[0..-3].each do |vibe|
-        vibes << params[vibe]
-      end
-      session[:vibes] = vibes
+        params.keys[0..-3].each do |vibe|
+          vibes << params[vibe]
+        end
+      session[:vibes] = vibes if (vibes - Vibe.all.pluck(:name)).empty?
 
       @collections = Collection.all
       @restaurants = []

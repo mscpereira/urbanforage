@@ -1,8 +1,12 @@
 <div class="container p-4">
   <div class="restaurant-index-top d-flex justify-content-between">
+  <% if params[:query].present? %>
+      <%= render "back_show" %>
+  <% else %>
     <%= link_to restaurants_path do %>
       <i class="ph-arrow-left" id="back-arrow"></i>
     <% end %>
+  <% end %>
     <div class="view-toggle ml-auto p-2">
       <div class="btn-group btn-group-toggle" data-toggle="buttons">
         <label class="btn btn-secondary active d-flex" onclick="listView()">
