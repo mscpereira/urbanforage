@@ -1,48 +1,9 @@
 <div class="container my-4">
   <div class="collection-index-top d-flex justify-content-between align-items-start my-5">
   </div>
-  <% @user_collections.each do |collection| %>
-    <%= link_to collection_path(collection) do %>
-      <div class="card my-3" id="collection-card">
-        <div class="card-body">
-          <h2 class="card-title"> <%= collection.name %> </h2>
-          <p class="card-text"> <%= collection.description %> </p>
-            <div class="action-btns mt-4">
-              <%= link_to edit_collection_path(collection) do %>
-                <i class="ph-pencil-fill" id="action-icon"></i>
-              <% end %>
-              <%= link_to collection_path(collection), method: :delete, data: {confirm: "Are you sure?"} do %>
-                <i class="ph-trash-fill" id="action-icon"></i>
-              <% end %>
-            </div>
-        </div>
-      </div>
-    <% end %>
-  <% end %>
 
-  <div class="friends-collection my-5">
-    <h1> Your saved collections </h1>
-      <% @favorites.each do |favorite| %>
-      <h3> <%= favorite.favoritable.name %> </h3>
-      <p> <%= favorite.favoritable.description %> </p>
-      <p><%= favorite.favoritable.user.first_name %> <%= favorite.favoritable.user.last_name %> </p>
-      <% if favorite.favoritable.user.photo.key.nil? %>
-          <th scope="row"> <%= image_tag "unisex-avatar2.jpg", height: 50, width: 50, crop: :fill, class: "small-avatar-default"%> </th>
-        <% else %>
-          <th scope="row"><%= cl_image_tag favorite.favoritable.user.photo.key, height: 50, width: 50, crop: :fill, class: "small-avatar"%></th>
-        <% end %>
-    <% end %>
 
-  </div>
 
-  <div class="all-collections row my-5">
-    <div class="col-12">
-      <h1> All collections </h1>
-      <% @collections.each do |collection| %>
-        <h3> <%= collection.name %> </h3>
-        <p> <%= collection.description %> </p>
-        <p> User: <%= collection.user.first_name %> <%= collection.user.last_name %>
-        <% end %>
   <div class="row">
     <div class="col-lg-6 col-sm-12">
     <h2 class="mb-3"> Your collections </h2>
@@ -67,5 +28,43 @@
       </div>
     </div>
 
+  <div class="friends-collection col-lg-6 col-sm-12">
+
+      <h2> Your saved collections </h2>
+        <% @favorites.each do |favorite| %>
+        <h3> <%= favorite.favoritable.name %> </h3>
+        <p> <%= favorite.favoritable.description %> </p>
+        <p><%= favorite.favoritable.user.first_name %> <%= favorite.favoritable.user.last_name %> </p>
+        <% if favorite.favoritable.user.photo.key.nil? %>
+            <th scope="row"> <%= image_tag "unisex-avatar2.jpg", height: 50, width: 50, crop: :fill, class: "small-avatar-default"%> </th>
+          <% else %>
+            <th scope="row"><%= cl_image_tag favorite.favoritable.user.photo.key, height: 50, width: 50, crop: :fill, class: "small-avatar"%></th>
+          <% end %>
+      <% end %>
+
+  </div>
+
+  </div>
+
+  <h1 class="mt-5"> Public collections </h1>
+  <div class="all-collections row">
+      <% @collections.each do |collection| %>
+        <div class="col-lg-4 col-sm-12">
+          <%= link_to collection_path(collection) do %>
+          <div class="other-collection my-3 p-4 d-flex justify-content-between" id="other-collection-card">
+                <div class="collection-top d-flex justify-content-between">
+                  <div class="collection-title w-50">
+                    <h3> <%= collection.name %> </h3>
+                    <p class="collection-card-description"> <%= collection.description %> </p>
+                  </div>
+                  <div class="collection-image-div" id="<%= ['yellow','red','blue'].sample %>-background">
+                      <%#= image_tag 'earthy-vibe.jpg', class:'collection-image' %>
+                  </div>
+                </div>
+                <p class="user-name">By <%= collection.user.first_name %> <%= collection.user.last_name %> </p>
+            </div>
+          <% end %>
+        </div>
+        <% end %>
   </div>
 </div>
