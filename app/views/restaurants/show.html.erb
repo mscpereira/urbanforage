@@ -94,14 +94,14 @@
                 <% end %>
               <% end %>
             <% end %>
-            <div class="buttons buttons-show d-flex justify-content-between mt-5 mr-5">
+            <div class="buttons buttons-show d-flex justify-content-between flex-wrap mt-5">
               <% if user_signed_in? %>
-                <a type="button" class="btn btn-outline-primary my-auto" data-toggle="modal" data-target="#exampleModal">Add a review</a>
+                <a type="button" class="btn btn-outline-primary my-2" data-toggle="modal" data-target="#exampleModal">Add a review</a>
               <% else %>
                 <%= link_to "Login", new_user_session_path, :class => "please-login btn btn-outline-primary my-auto" %>
               <% end %>
-              <%= link_to "Book", @restaurant.website, class: "btn btn-outline-primary my-auto", target: "_blank" %>
-              <%= link_to "Directions", @restaurant.directions, class: "btn btn-primary my-auto", target: "_blank" %>
+              <%= link_to "Book", @restaurant.website, class: "btn btn-outline-primary my-2", target: "_blank" %>
+              <%= link_to "Directions", @restaurant.directions, class: "btn btn-primary my-2", target: "_blank" %>
             </div>
             <%= render 'restaurants/modal_new', restaurant: @restaurant, review: @review %>
           </div>

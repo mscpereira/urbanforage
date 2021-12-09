@@ -1,32 +1,40 @@
 <div class="container-home">
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(assets/landing-page.jpg);">
     <div class="container-banner">
+
       <div class="container-header">
-        <div class="container-title">
-          <%= image_tag "UF-white.svg", class: "logo" %>
-        </div>
-        <div class="container-login">
-        <% if user_signed_in? %>
-          <%= link_to "Log out", destroy_user_session_path, method: :delete, class:"btn btn-outline-light", id: "logout-link"%>
-        </div>
-      </div>
-      <div class="container-info">
-        <h1><span id="title">Find restaurant experiences that match <span class="highlight">your vibe</span>, <%= current_user.first_name.capitalize %>.</h1>
-        <%= link_to "Start curating", vibes_path, class:"btn btn-outline-light" %>
-      </div>
-    </div>
-  </div>
-</div>
-        <% else %>
-          <%= link_to "Log in", new_user_session_path, class:"btn btn-outline-light", id: "login-link"%>
-          <%= link_to "Sign up", new_user_registration_path, class:"btn btn-primary", id: "signup-link"%>
+
+
+          <div class="container-title">
+            <%= image_tag "UF-white.svg", class: "logo" %>
           </div>
+
+          <%# <div class="container-login">
+          <% if user_signed_in? %>
+            <%#= link_to "Log out", destroy_user_session_path, method: :delete, class:"btn btn-outline-light", id: "logout-link"%>
+          <%# </div> %>
+
+          <%# <div class="container-info">
+            <h1><span id="title">Find restaurant experiences that match <span class="highlight">your vibe</span>, <%= current_user.first_name.capitalize %>.</h1>
+            <%#= link_to "Start curating", vibes_path, class:"btn btn-outline-light" %>
+          <%# </div> %>
+
+
       </div>
       <div class="container-info">
         <h1><span id="title">Find restaurant experiences that match <span class="highlight">your vibe</span></h1>
         <%= link_to "Start curating", vibes_path, class:'btn btn-outline-light' %>
       </div>
     </div>
+
+    </div>
   </div>
 </div>
-        <% end %>
+        <%# else %>
+          <%#= link_to "Log in", new_user_session_path, class:"btn btn-outline-light", id: "login-link"%>
+          <%#= link_to "Sign up", new_user_registration_path, class:"btn btn-primary", id: "signup-link"%>
+          <%# </div>
+      </div>
+  </div>
+</div> %>
+        <%# end %>
