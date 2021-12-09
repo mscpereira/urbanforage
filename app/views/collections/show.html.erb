@@ -1,5 +1,7 @@
 <div class="container my-3">
-  <%= link_to 'Back', collections_path, class:'btn btn-outline-primary my-3' %>
+  <%= link_to collections_path do %>
+    <i class="ph-arrow-left" id="back-arrow"></i>
+  <% end %>
   <h1> <%= @collection.name %> </h1>
   <p class="mb-3"> <%= @collection.description %> </p>
   <div class="action-btns mt-4">
