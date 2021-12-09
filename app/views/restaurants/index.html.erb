@@ -50,7 +50,7 @@
                       </div>
                       </li>
                           <% @collections.each do |collection| %>
-                                <li class="list-group-item">
+                                <li class="list-group-item" id="sweet-alert-demo">
                                    <%= link_to collection.name, collection_restaurant_collections_path(collection, restaurant: restaurant), method: :post %>
                                 </li>
                           <% end %>

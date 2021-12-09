@@ -12,6 +12,7 @@
     "places.js": "^1.19.0",
     "popper.js": "^1.16.1",
     "stimulus": "^3.0.1",
+    "sweetalert": "^2.1.2",
     "turbolinks": "^5.2.0",
     "webpack": "^4.46.0",
     "webpack-cli": "^3.3.12",
