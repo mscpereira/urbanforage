@@ -1,5 +1,5 @@
 class CollectionsController < ApplicationController
-  before_action :set_collection, only: %i[show edit update destroy]
+  before_action :set_collection, only: %i[show edit update destroy favorite]
 
   def index
     @users = User.all
@@ -33,6 +33,11 @@ class CollectionsController < ApplicationController
   end
 
   def show
+  end
+
+  def favorite
+    current_user.favorited?(@collection) ? current_user.unfavorite(@collection) : current_user.favorite(@collection)
+    redirect_to collection_path(@collection)
   end
 
   def edit

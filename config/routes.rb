@@ -7,6 +7,9 @@ Rails.application.routes.draw do
     resources :restaurant_vibes, only: %i[create destroy]
   end
   resources :collections do
+    member do
+      patch :favorite
+    end
     resources :restaurant_collections, only: :create
   end
   resources :vibes, only: %i[index]
