@@ -11,6 +11,11 @@
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
           </ol>
 
           <div class="carousel-inner">
@@ -45,10 +50,30 @@
   <div class="container container-show p-0">
     <div class="row row-show">
       <div class="row-reviews p-0 col-12 col-lg-6 justify-content-center align-items-bottom">
-        <div class="row-restaurant">
+        <div class="row-restaurant mr-5">
           <h1><%= @restaurant.name %></h1>
           <p><%= @restaurant.description%></p>
-          <hr style="width: 80%">
+          <hr style="width: 100%">
+          <div class="add-collection-show">
+            <div class="dropdown show">
+              <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Add to collection
+              </a>
+
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <% @collections.each do |collection| %>
+                  <li>
+                    <%= link_to collection.name, collection_restaurant_collections_path(collection, restaurant: @restaurant), method: :post, class:"dropdown-item py-4" %>
+                  </li>
+                <% end %>
+                <li>
+                  <%= link_to new_collection_path(id: @restaurant.id), class:"dropdown-item border-top py-4" do %>
+                    Add to new collection
+                  <% end %>
+                </li>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="row-actions justify-content-between" data-controller="insert-in-list" data-insert-in-list-position-value="beforeend">
@@ -67,19 +92,19 @@
                 <p>See all the <%= pluralize @restaurant.reviews.size, "review" %>...</p>
               <% end %>
             <% end %>
-            <div class="buttons d-flex justify-content-start mt-5">
-              <%= link_to "Directions", @restaurant.directions, class: "btn btn-outline-primary mb-3 mt-3", target: "_blank" %>
-              <%= link_to "Book", @restaurant.website, class: "btn btn-outline-primary mb-3 mt-3 ml-0", target: "_blank" %>
+            <div class="buttons d-flex justify-content-between mt-5 mr-5">
               <% if user_signed_in? %>
-                <button type="button" class="btn btn-outline-primary mb-3 mt-3 ml-0" style="height: 65px" data-toggle="modal" data-target="#exampleModal">Add a review</button>
+                <a type="button" class="btn btn-outline-primary my-auto" data-toggle="modal" data-target="#exampleModal">Add a review</a>
               <% else %>
-                <%= link_to "Login", new_user_session_path, :class => "please-login btn btn-outline-primary mb-3 mt-3" %>
+                <%= link_to "Login", new_user_session_path, :class => "please-login btn btn-outline-primary my-auto" %>
               <% end %>
+              <%= link_to "Book", @restaurant.website, class: "btn btn-outline-primary my-auto", target: "_blank" %>
+              <%= link_to "Directions", @restaurant.directions, class: "btn btn-primary my-auto", target: "_blank" %>
             </div>
             <%= render 'restaurants/modal_new', restaurant: @restaurant, review: @review %>
           </div>
         </div>
-      </div>
+    </div>
 
       <div class="row-map col-12 col-lg-6">
         <div id="map-show"
