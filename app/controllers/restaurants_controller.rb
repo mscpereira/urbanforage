@@ -42,6 +42,7 @@ class RestaurantsController < ApplicationController
 
   def show
     store_location_for(:user, restaurant_path)
+    @collections = Collection.all
     @restaurant = Restaurant.find(params[:id])
     @review = Review.new
     @marker = {
