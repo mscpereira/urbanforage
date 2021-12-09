@@ -2,13 +2,11 @@
   border: 5px;
   width: 100%;
   min-height: 100vh;
-  // padding-top: 100px;
 }
 
 .cards-vibe {
   position: relative;
   overflow: hidden;
-  // margin-bottom: 15px;
   height: 300px;
   border-radius: 15px;
   background-size: cover;
@@ -49,7 +47,6 @@
   width: 80%;
   height: 220%;
   background: rgba(48,101,94,0.7);
-  // background: $green;
   top: -50%;
   left: -100%;
   z-index: 1;
@@ -85,7 +82,6 @@
 
 .btn-ghost {
   color: $white;
-  // border: 1px solid $white;
   background-color: $green;
   border-width: thing;
   padding: 8px 18px;
