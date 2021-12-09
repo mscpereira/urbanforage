@@ -14,12 +14,10 @@ class RestaurantsController < ApplicationController
       end
       session[:vibes] = vibes
 
-
       @collections = Collection.all
       @restaurants = []
       @vibes = []
       params.each_key do |key|
-
         if key.match(/vibe-\d+/)
           vibe = Vibe.find_by_name(params[key])
           @vibes << vibe.name

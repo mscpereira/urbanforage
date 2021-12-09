@@ -1,6 +1,6 @@
 <div class="container">
 
-  <%= link_to_back(session[:vibes]) %>
+  <%= render "back_show" %>
 
   <div class="carousel container-carousel justify-content-center">
     <div class="row">
@@ -81,15 +81,17 @@
             <% if @restaurant.reviews.blank? %>
               <p><small>"Be the first to leave a review for <strong><%= @restaurant.name %></strong>"</small></p>
             <% else %>
-              <% @restaurant.reviews.last(2).reverse.each do |review| %>
+              <% @restaurant.reviews.last(3).reverse.each do |review| %>
                 <div class="review-text-container">
                   <p class="review-text">
                   <%= render 'restaurants/review', review: review %>
                 </p>
                 </div>
               <% end %>
-              <%= link_to restaurant_reviews_path(@restaurant, @review), style: "color:darkblue" do %>
-                <p>See all the <%= pluralize @restaurant.reviews.size, "review" %>...</p>
+              <% if @restaurant.reviews.size > 3  %>
+                <%= link_to restaurant_reviews_path(@restaurant, @review), style: "color:darkblue" do %>
+                  <p>See all the <%= pluralize @restaurant.reviews.size, "review" %>...</p>
+                <% end %>
               <% end %>
             <% end %>
             <div class="buttons d-flex justify-content-between mt-5 mr-5">
