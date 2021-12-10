@@ -19,7 +19,12 @@
             </div>
             <div class="collection-image-div">
               <%# <%= cl_image_tag 'earthy-vibe.jpg', class:'collection-image'%>
+              <% if current_user.photo.key.nil? %>
+                <div class="collection-image-div" id="<%= ['yellow','red','blue'].sample %>-background">
+                </div>
+              <% else %>
               <%= cl_image_tag current_user.photo.key, height: 50, width: 50, crop: :fill, class: "collection-image-div"%>
+              <% end %>
             </div>
           </div>
           <% end %>
@@ -66,10 +71,12 @@
                     <h3> <%= collection.name %> </h3>
                     <p class="collection-card-description"> <%= collection.description %> </p>
                   </div>
+                  <% if collection.user.photo.key.nil? %>
                   <div class="collection-image-div" id="<%= ['yellow','red','blue'].sample %>-background">
-                      <%#= image_tag 'earthy-vibe.jpg', class:'collection-image' %>
-                      <%= cl_image_tag collection.user.photo.key, height: 50, width: 50, crop: :fill, class: "collection-image-div"%>
                   </div>
+                  <% else  %>
+                      <%= cl_image_tag collection.user.photo.key, height: 50, width: 50, crop: :fill, class: "collection-image-div"%>
+                  <% end %>
                 </div>
                 <p class="user-name">By <%= collection.user.first_name %> <%= collection.user.last_name %> </p>
             </div>
