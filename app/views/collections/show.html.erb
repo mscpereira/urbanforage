@@ -4,29 +4,21 @@
   <% end %>
   <h1> <%= @collection.name %> </h1>
   <p class="mb-3"> <%= @collection.description %> </p>
-  <div class="action-btns mt-4">
-                <%= link_to edit_collection_path(@collection) do %>
-                  <i class="ph-pencil-fill" id="action-icon"></i>
-                <% end %>
-                <%= link_to collection_path(@collection), method: :delete, data: {confirm: "Are you sure?"} do %>
-                  <i class="ph-trash-fill" id="action-icon"></i>
-                <% end %>
-                <% if current_user.favorited?(@collection) %>
-                  <%= link_to favorite_collection_path(@collection), method: :patch, remote: true do %>
-                    <i class="ph-heart-straight-fill" id="action-icon"></i>
-                  <% end %>
-                <% else %>
-                  <%= link_to favorite_collection_path(@collection), method: :patch, remote: true do %>
-                    <i class="ph-heart-straight" id="action-icon"></i>
-                  <% end %>
-                <% end %>
+    <div class="action-btns mt-4">
 
-                </div>
-  <div class="row restaurant-list">
-
+      <% if !current_user.favorited?(@collection) %>
+        <%= link_to favorite_collection_path(@collection), method: :patch, remote: true do %>
+          <i class="ph-heart-straight" id="action-icon"></i>
+        <% end %>
+      <% else %>
+        <%= link_to favorite_collection_path(@collection), method: :patch, remote: true do %>
+          <i class="ph-heart-straight-fill" id="action-icon"></i>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="row restaurant-list">
     <% @collection.restaurants.each do |restaurant| %>
       <div class="col-lg-4 col-sm-12">
-
           <%#= restaurant.name %>
         <div class="card my-3 box" id="restaurant-card-<%= restaurant.id %>">
           <%= link_to restaurant_path(restaurant), class:"text-decoration-none" do %>
@@ -44,5 +36,4 @@
         </div>
     <% end %>
   </div>
-
 </div>

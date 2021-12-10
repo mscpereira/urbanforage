@@ -33,6 +33,7 @@ class CollectionsController < ApplicationController
   end
 
   def show
+    @collections = Collection.where.not(user_id: current_user.id)
   end
 
   def favorite
